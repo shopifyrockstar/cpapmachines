@@ -1,0 +1,120 @@
+<script>
+  let isUnblocked = false;
+
+  window.addEventListener("allReadys", (e) => {
+    if(location.pathname.includes('products'))
+    {
+
+
+      console.log('recharge loading')
+      var script = document.createElement('script');
+      script.src = "https://rechargeassets-bootstrapheroes-rechargeapps.netdna-ssl.com/static/js/recharge.js?shop=cpapmachinescanada.myshopify.com";
+      document.getElementsByTagName('head')[0].appendChild(script);
+
+
+
+
+
+    }
+  });
+  window.addEventListener("allReady", (e) => {
+
+
+
+    setTimeout(function () {
+      if (!isUnblocked) {
+        isUnblocked = true;
+        initApplication();
+        loadApps();
+        initPreviewBar();
+      }
+    }, 10000)
+
+
+    let lazyimage = document.querySelectorAll(".header__logo .lazyimage");
+    Array.from(lazyimage).forEach(function(img){
+      if(img.dataset.src)
+      {
+        img.style.height = "50px";
+        img.src = img.dataset.src;
+      }
+    })
+
+
+    window.addEventListener('scroll', function() {
+
+      if (!isUnblocked) {
+        isUnblocked = true;
+        initApplication();
+        loadApps();
+        initPreviewBar();
+      }
+    });
+    window.addEventListener('mouseover', function() {
+
+      if (!isUnblocked) {
+        isUnblocked = true;
+        initApplication();
+        loadApps();
+        initPreviewBar();
+      }
+
+    });
+    window.addEventListener('touchstart', function() {
+      if (!isUnblocked) {
+        isUnblocked = true;
+        initApplication();
+        loadApps();
+        initPreviewBar();
+      }
+    });
+  });
+  function loadApps()
+  {
+
+    array.forEach(function(element){
+      var script = document.createElement('script');
+      script.src = element;
+      document.getElementsByTagName('head')[0].appendChild(script);
+    });
+
+
+  }
+  function initApplication()
+  {
+
+    let scripts = document.querySelectorAll("script");
+
+    Array.from(scripts).forEach(function(element){
+
+      if(element.dataset.src){
+        element.src = element.dataset.src;
+        document.getElementsByTagName("head")[0].appendChild(element);
+
+      }
+
+    });
+
+    console.log("allLoad")
+    emitEvent("allLoad", window, {});
+
+
+  }
+
+  function initPreviewBar(){
+
+    setTimeout(function(){
+      const previewBarInjector = new Shopify.PreviewBarInjector({
+    targetNode: document.body,
+    iframeRoot: 'https://cpapmachinescanada.ca',
+    iframeSrc: 'https://cpapmachinescanada.ca/preview_bar',
+    previewToken: 'db8n1il2esb6tan5',
+    themeStoreId: '568',
+    permanentDomain: 'cpapmachinescanada.myshopify.com',
+      });
+      previewBarInjector.init();
+
+    }, 25000); 
+  }
+
+</script>

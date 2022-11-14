@@ -1,0 +1,100 @@
+<script>
+
+  window.delayed=function(e,t,n){return!!n&&(!!t&&(!!e&&void setTimeout(function(){var n;"link"==t&&((n=document.createElement("link")).type="text/css",n.rel="stylesheet",n.href=e,document.head.appendChild(n));"script"==t&&((n=document.createElement("script")).type="text/javascript",n.async=!0,n.src=e,document.head.appendChild(n))},n)))};
+  window.emitEvent=function(e,n,t){if(e){n=n||window,t=t||{};var a=new CustomEvent(e,{bubbles:!0,cancelable:!0,detail:t});n.dispatchEvent(a)}};
+
+  let timer = 10;
+  if(screen.width < 767)
+  {
+  	timer = 2000;
+  }
+
+  window.theme_scripts =  [
+
+    { 
+          url: "{{ 'api.jquery.js' | shopify_asset_url }}",
+     
+          type: "JS"
+    },
+    { 
+          url: "{{ 'vendor.js' | asset_url  | replace: '//', 'https://' }}",
+     
+          type: "JS"
+    },
+    { 
+          url: "{{ 'theme.js' | asset_url  | replace: '//', 'https://' }}",
+     
+          type: "JS"
+    },
+    { 
+          url: "{{ 'custom.js' | asset_url  | replace: '//', 'https://' }}",
+     
+          type: "JS"
+    },
+    
+    {%- if request.page_type contains 'customers/' -%}
+    { 
+          url: "{{ 'shopify_common.js' | shopify_asset_url }}",
+     
+          type: "JS"
+    },
+    { 
+          url: "{{ 'customer_area.js' | shopify_asset_url }}",
+     
+          type: "JS"
+    },
+    {%- endif -%}
+
+  ];
+    
+    let isLoaded = false;
+    window.addEventListener("scroll", function(){
+      if(!isLoaded)
+      {
+          isLoaded =1;
+          loadScripts();
+      }
+    })
+    window.addEventListener("mouseover", function(){
+    if(!isLoaded)
+      {
+          isLoaded =1;
+          loadScripts();
+      }
+    })
+
+    
+  window.addEventListener("DOMContentLoaded",()=>{setTimeout(()=>{const e=(new Date).getDate();sessionStorage.getItem("cacheDate")!=e&&(sessionStorage.clear(),sessionStorage.setItem("cacheDate",e)),Array.prototype.forEachAsync=function(e,t){var n=this;setTimeout(function(){var o=0,s=function(){this.burned||(this.burned=!0,++o>=n.length?t&&t():e(n[o],s.bind({})))};0==n.length?t&&t():e(n[0],s.bind({}))},0)};const t=function(e,t){let n=document.createElement("script");n.innerHTML=n.innerHTML+e,console.log(t+" was added: JS"),document.getElementsByTagName("head")[0].appendChild(n)},n=function(e,t){let n=document.createElement("style");n.type="text/css",n.styleSheet?n.styleSheet.cssText=e:n.appendChild(document.createTextNode(e)),document.getElementsByTagName("head")[0].appendChild(n),console.log(t+" was added: CSS"),window.scrollTo(0,0),document.body.classList.contains("hidden_load")&&document.body.classList.remove("hidden_load")};window.theme_scripts.forEachAsync(function(e,o){if(null==sessionStorage.getItem(e.url))fetch(e.url).then(e=>e.text()).then(s=>{sessionStorage.setItem(e.url,s),"CSS"==e.type?n(s,e.url):t(s,e.url),o()});else{let s=sessionStorage.getItem(e.url);"CSS"==e.type?n(s,e.url):t(s,e.url),o()}},function(){$(".grid-link__image--loading").removeClass("grid-link__image--loading"),console.log("All done!"),emitEvent("allReadys",window,{})})},timer)});
+
+  //function loadScripts(){if(!isLoaded){const e=(new Date).getDate();sessionStorage.getItem("cacheDate")!=e&&(sessionStorage.clear(),sessionStorage.setItem("cacheDate",e)),Array.prototype.forEachAsync=function(e,t){var n=this;setTimeout(function(){var o=0,s=function(){this.burned||(this.burned=!0,++o>=n.length?t&&t():e(n[o],s.bind({})))};0==n.length?t&&t():e(n[0],s.bind({}))},0)};const t=function(e,t){let n=document.createElement("script");n.innerHTML=n.innerHTML+e,console.log(t+" was added: JS"),document.getElementsByTagName("head")[0].appendChild(n)},n=function(e,t){let n=document.createElement("style");n.type="text/css",n.styleSheet?n.styleSheet.cssText=e:n.appendChild(document.createTextNode(e)),document.getElementsByTagName("head")[0].appendChild(n),console.log(t+" was added: CSS"),window.scrollTo(0,0),document.body.classList.contains("hidden_load")&&document.body.classList.remove("hidden_load")};window.theme_scripts.forEachAsync(function(e,o){if(null==sessionStorage.getItem(e.url))fetch(e.url).then(e=>e.text()).then(s=>{sessionStorage.setItem(e.url,s),"CSS"==e.type?n(s,e.url):t(s,e.url),o()});else{let s=sessionStorage.getItem(e.url);"CSS"==e.type?n(s,e.url):t(s,e.url),o()}},function(){$(".grid-link__image--loading").removeClass("grid-link__image--loading"),console.log("All done!"),emitEvent("allReady",window,{})})}}
+
+  function loadScripts()
+  {
+    let appsScripts = [
+      "https://apis.google.com/js/platform.js?onload=renderBadge",
+      "https://rechargeassets-bootstrapheroes-rechargeapps.netdna-ssl.com/static/js/rcWidget.js",
+      "https://cdn.weglot.com/weglot.min.js"
+      
+    ];
+    for(let src of appsScripts)
+    {
+	
+      var script = document.createElement('script');
+      script.src = src;
+      document.getElementsByTagName('head')[0].appendChild(script);
+    	
+    }
+    
+    
+    delayed('{{ 'styles.scss.css' | asset_url }}', 'link', 200);
+    delayed('{{ 'custom.scss.css' | asset_url }}', 'link', 200);
+
+    
+//     delayed('https://rechargeassets-bootstrapheroes-rechargeapps.netdna-ssl.com/static/js/rcWidget.js', 'script', 10);
+    //delayed('https://apis.google.com/js/platform.js?onload=renderBadge', 'script', 10);
+//     delayed('https://cdn.weglot.com/weglot.min.js', 'script', 10);
+    setTimeout(()=>{
+    	emitEvent("allReady",window,{})
+  	}, 1000);
+  }
+</script>

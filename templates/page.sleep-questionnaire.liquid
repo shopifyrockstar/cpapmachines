@@ -1,0 +1,238 @@
+<script type="text/javascript">// <![CDATA[
+window.addEventListener("load", function() {
+				addRadioClickListeners();
+				calculateSleepScore();
+			});
+			function addRadioClickListeners() {
+				var radioButtons = document.getElementById('questions').getElementsByTagName('input');
+				for (var i=0; i < radioButtons.length; i++) {
+					radioButtons[i].addEventListener('click', calculateSleepScore);
+				}
+			}
+			function isRadioButtonValueYes(name) {
+				return document.querySelector('input[name = ' + name + ']:checked').value == 'yes';
+			}
+			function formatAnswer(descriptionId, isYes) {
+				return document.getElementById(descriptionId).innerText + (isYes ? ' Yes' : ' No'); 
+			}
+			function formatAnswerValue(descriptionId, valueId) {
+				return document.getElementById(descriptionId).innerText + ' ' + document.getElementById(valueId).value; 
+			}
+			function calculateRadioButtonValue(name, totals) {
+				var isYes = isRadioButtonValueYes(name);
+				if (isYes) {
+					totals.yes++;
+				} else {
+					totals.no++;
+				}
+				return formatAnswer(name + '-description', isYes);
+			}
+			var _formattedMailBody = '';
+			function calculateSleepScore() {
+				var stopTotals = {yes: 0, no: 0};
+				_formattedMailBody = calculateRadioButtonValue('question-s', stopTotals);
+				_formattedMailBody += '\n\n';
+				_formattedMailBody += calculateRadioButtonValue('question-t', stopTotals);
+				_formattedMailBody += '\n\n';
+				_formattedMailBody += calculateRadioButtonValue('question-o', stopTotals);
+				_formattedMailBody += '\n\n';
+				_formattedMailBody += calculateRadioButtonValue('question-p', stopTotals);
+				_formattedMailBody += '\n\n';
+				
+				var bangTotals = {yes: 0, no: 0};
+				var bQuestion = isRadioButtonValueYes('question-b');
+				if (bQuestion) {
+					bangTotals.yes++;
+				} else {
+					bangTotals.no++
+				}
+				_formattedMailBody += formatAnswer('question-b-description', bQuestion);
+				_formattedMailBody += '\n\n';
+				
+				_formattedMailBody += calculateRadioButtonValue('question-a', bangTotals);
+				_formattedMailBody += '\n\n';
+				
+				var nQuestion = isRadioButtonValueYes('question-n');
+				if (nQuestion) {
+					bangTotals.yes++;
+				} else {
+					bangTotals.no++
+				}
+				_formattedMailBody += formatAnswer('question-n-description', nQuestion);
+				_formattedMailBody += '\n\n';
+				
+				var gQuestion = isRadioButtonValueYes('question-g');
+				if (gQuestion) {
+					bangTotals.yes++;
+				} else {
+					bangTotals.no++
+				}
+				_formattedMailBody += formatAnswer('question-g-description', gQuestion);
+				_formattedMailBody += '\n\n';
+				
+				var totalYesQuestions = stopTotals.yes + bangTotals.yes;
+				var totalNoQuestions = stopTotals.no + bangTotals.no;
+                                var riskLevel = 'Low';
+                                if (totalYesQuestions > 4 || (stopTotals.yes > 1 && (gQuestion || bQuestion || nQuestion))) {
+					riskLevel = 'High';
+				} else if (totalYesQuestions > 2) {
+					riskLevel = 'Medium';
+				}
+                                var email = formatAnswerValue('question-email-description', 'question-email');
+				var firstName = formatAnswerValue('question-first-name-description', 'question-first-name');
+                                var lastName = formatAnswerValue('question-last-name-description', 'question-last-name');
+				var phone = formatAnswerValue('question-phone-description', 'question-phone');
+				var dob = formatAnswerValue('question-dob-description', 'question-dob');
+				
+				_formattedMailBody = 'Sleep Questionnaire Results\n\n' + email + '\n' + firstName + '\n' + lastName + '\n' + phone  +'\n' + dob +
+				'\nRisk Level: ' + riskLevel + ', Total Yes: ' +
+				totalYesQuestions + ', Total No: ' + totalNoQuestions + '\n\n\n' + _formattedMailBody;
+				var riskLevelEl =  document.getElementById('riskLevel');
+				
+				riskLevelEl.innerText = riskLevel;
+                                document.getElementById('totals').className = riskLevel;
+                document.getElementById('questionnaire-content').value = _formattedMailBody;
+			}
+// ]]></script>
+<style><!--
+#questions label {
+    margin-right: 15px;
+    margin-left: 5px;
+}
+#questions #name-dob label {
+    margin: 0px;
+}
+#questions input[type='text'],
+#questions input[type='date'],
+#questions input[type='email'],
+#questions input[type='tel']{
+    padding: initial;
+}
+#questions input[type='radio'] {
+    font-size: initial;
+    line-height: initial;
+    background: initial;
+    color: initial;
+    border: initial;
+    padding: initial;
+    margin: initial;
+    vertical-align: initial;
+    max-width: initial;
+    border-radius: initial;
+    -webkit-appearance: radio;
+}
+#questions p {
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+#questions p::first-letter {
+    font-size: 1.75em;
+    font-weight: strong;
+}
+#questions #totals p::first-letter,
+#questions .success p::first-letter  {
+    font-size: inherit;
+    font-weight: inherit;
+}
+#questions #name-dob {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+#questions #name-dob div:first-child {
+    margin-right: 15px
+}
+#questions #totals span {
+    font-weight: bold;
+}
+#questions #totals,
+#questions #totals.Low{
+    color: green;
+    font-size: 1.3em;
+}
+#questions #totals.Medium{
+    color: orange;
+}
+#questions #totals.High{
+    color: red;
+}
+#questions #button-container {
+    display: flex;
+    justify-content: center;
+}
+#questions #questionnaire-content {
+    display: none;
+}
+#questions .errors {
+  color: red;  
+}
+#questions .success {
+  font-weight: bold;  
+}
+--></style>
+
+<div class="container cf">
+  <div class="page-header cf">
+    <h1 class="majortitle" style="margin-top: 30px">{{ page.title }}</h1>
+  </div>
+  <div class="user-content row-spacing {% if settings.lightbox_imgs %}lightboximages{% endif %}">
+    
+    {% form 'contact' %}
+        
+        <div id="questions">
+          
+        {% if form.posted_successfully? %}
+          <div class="success">
+         	<p>Your Sleep Questionnaire has been submitted. One of our Sleep Experts will be in touch with you.</p>
+            <br />
+          </div>
+        {% endif %}
+
+        {% if form.errors %}
+          <ul class="errors">
+            {% for field in form.errors %}
+            <li>{{ field | replace: 'body','Message' | capitalize }} - {{ form.errors.messages[field] }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}  
+          
+        <textarea id="questionnaire-content" name="contact[body]"></textarea>
+        <div id="name-dob">
+        <div><label id="question-email-description" for="question-email">Email: </label> <input type="email" id="question-email" name="contact[email]" required /></div>
+        <div><label id="question-first-name-description" for="question-first-name">First Name: </label> <input type="text" id="question-first-name" required /></div>
+        <div><label id="question-last-name-description" for="question-last-name">Last Name: </label> <input type="text" id="question-last-name" required /></div>
+        <div><label id="question-phone-description" for="question-phone">Phone Number: </label> <input type="tel" id="question-phone" /></div>
+        <div><label id="question-dob-description" for="question-dob">Date of Birth: </label> <input type="date" id="question-dob" required /></div>
+        </div>
+        <div></div>
+        <div></div>
+        <div>The questionnaire below is a common tool for screening your risk-level for Obstructive Sleep Apnea. Answer the questions honestly and see your risk level immediately below.<br />
+        <p id="question-s-description">Snoring: Do you <strong>Snore Loudly</strong> (loud enough to be heard through closed doors or your bed-partner elbows you for snoring at night)?</p>
+        <input id="question-s-yes" type="radio" name="question-s" value="yes" /><label for="question-s-yes">Yes</label> <input id="question-s-no" type="radio" name="question-s" value="no" checked="checked" /><label for="question-s-no">No</label>
+        <p id="question-t-description">Tired: Do you often feel <strong>Tired, Fatigued, or Sleepy</strong> during the daytime (such as falling asleep during during driving or talking to someone)?</p>
+        <input id="question-t-yes" type="radio" name="question-t" value="yes" /><label for="question-t-yes">Yes</label> <input id="question-t-no" type="radio" name="question-t" value="no" checked="checked" /><label for="question-t-no">No</label>
+        <p id="question-o-description">Observed: Has anyone <strong>Observed</strong> you <strong>Stop Breathing</strong> or <strong> Choking/Gasping</strong> during your sleep?</p>
+        <input id="question-o-yes" type="radio" name="question-o" value="yes" /><label for="question-o-yes">Yes</label> <input id="question-o-no" type="radio" name="question-o" value="no" checked="checked" /><label for="question-o-no">No</label>
+        <p id="question-p-description">Pressure: Do you have or are being treated for <strong>High Blood Pressure</strong>?</p>
+        <input id="question-p-yes" type="radio" name="question-p" value="yes" /><label for="question-p-yes">Yes</label> <input id="question-p-no" type="radio" name="question-p" value="no" checked="checked" /><label for="question-p-no">No</label> <br /><br />
+        <p id="question-b-description">Body Mass Index more than 35 kg/m<sup>2</sup>?</p>
+        <input id="question-b-yes" type="radio" name="question-b" value="yes" /><label for="question-b-yes">Yes</label> <input id="question-b-no" type="radio" name="question-b" value="no" checked="checked" /><label for="question-b-no">No</label>
+        <p id="question-a-description">Age older than 50 years?</p>
+        <input id="question-a-yes" type="radio" name="question-a" value="yes" /><label for="question-a-yes">Yes</label> <input id="question-a-no" type="radio" name="question-a" value="no" checked="checked" /><label for="question-a-no">No</label>
+        <p id="question-n-description">Neck size large? For males, is your shirt collar 17 inches or larger? For females, is shirt collar 16 inches or larger?</p>
+        <input id="question-n-yes" type="radio" name="question-n" value="yes" /><label for="question-n-yes">Yes</label> <input id="question-n-no" type="radio" name="question-n" value="no" checked="checked" /><label for="question-n-no">No</label>
+        <p id="question-g-description">Gender = Male?</p>
+        <input id="question-g-yes" type="radio" name="question-g" value="yes" /><label for="question-g-yes">Yes</label> <input id="question-g-no" type="radio" name="question-g" value="no" checked="checked" /><label for="question-g-no">No</label></div>
+        <div id="totals">
+        <p>OSA Risk Level: <span id="riskLevel"></span></p>
+        </div>
+        <div id="button-container"><input type="submit" value="Send Results To A Sleep Expert" /></div>
+        
+        </div>
+    
+     
+    {% endform %}
+    
+  </div>
+</div>

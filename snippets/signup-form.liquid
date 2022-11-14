@@ -1,0 +1,46 @@
+{% comment %}
+You may enter a MailChimp form action URL between the single-quotes below
+Help for finding that may be found here: http://cleanthemes.co.uk/pages/get-a-mailchimp-form-action-url
+{% endcomment %}
+
+{% assign form_action = '' %}
+
+<div class="signup-form-cont">
+  <div class="signup-form">
+    {% if form_action == blank %}
+    {% form 'customer' %}
+    {% if form.posted_successfully? %}
+    <div class="signup-form__response">
+      <h4>{{ 'layout.signup.post_success' | t }}</h4>
+    </div>
+    {% else %}
+    <input type="hidden" id="contact_tags" name="contact[tags]" value="prospect,newsletter"/>
+    <label for="mailinglist_email">{{ 'layout.signup.label' | t }}</label>
+    <span class="input-block">
+      <input type="email" placeholder="{{ 'layout.signup.email' | t }}" class="required" value="" id="mailinglist_email" name="contact[email]" /><button class="compact" type="submit">{% include 'svg-chevron-right' %}</button>
+    </span>
+    {% if form.errors %}
+    <div class="signup-form__response">
+      {% for field in form.errors %}
+      <p class="error">{{ field | capitalize }} - {{ form.errors.messages[field] }}</p>
+      {% endfor %}
+    </div>
+    {% endif %}
+    {% endif %}
+    {% endform %}
+    
+    {% else %}
+    
+    <form action="{{ form_action }}" data-productid="{{ product.id }}" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+<!-- Begin ReCharge code -->
+{% if product.available %}{% include 'subscription-product' %}{% endif %}
+<!-- End ReCharge code -->
+
+      <label for="mce-EMAIL">{{ 'layout.signup.label' | t }}</label>
+      <span class="input-block">
+        <input type="email" class="required email" placeholder="{{ 'layout.signup.email' | t }}" value="" id="mce-EMAIL" required name="EMAIL" /><button class="compact" name="subscribe" type="submit">{% include 'svg-chevron-right' %}</button>
+      </span>
+    </form>
+    {% endif %}
+  </div>
+</div>

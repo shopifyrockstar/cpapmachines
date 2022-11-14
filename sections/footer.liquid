@@ -1,0 +1,74 @@
+{% if linklists[section.settings.menu_linklist].links.size > 0 %}
+<div class="nav-row">
+  {% include 'main-navigation' with section.settings.menu_linklist %}
+</div><!-- /.nav-row -->
+{% endif %}
+
+<div class="lower cf">
+  <div class="lower-left">
+    {% if section.settings.show_social_icons %}
+    {% include 'social-icons' %}
+    {% endif %}
+
+    {% if section.settings.signup_show %}
+    <div class="interact">
+      {% include 'signup-form' %}
+    </div><!-- /.interact -->
+    {% endif %}
+
+    <div class="copyright">
+      <g:ratingbadge merchant_id=119671041></g:ratingbadge>
+      <span class="copy">{{ shop.name | link_to: '/' }}. Copyright {{ "now" | date: "%Y" }} </span>
+    </div><!-- /.copyright -->
+
+    {% comment %}<div class="payment-methods">
+      {% for type in shop.enabled_payment_types %}
+      <img src="{{ type | payment_type_img_url }}" />
+      {% endfor %}
+    </div>{% endcomment %}
+  </div>
+  <div class="lower-right">
+    {{ section.settings.lower_right }}
+  </div>
+</div>
+
+<script>
+$(document).ready(function(){
+     $("#minicart_close").click(function(){
+      $(".mini-cart-product").hide();
+    });
+});
+</script>
+<script src="{{ 'jquery.js' | asset_url }}" async></script>
+
+
+{% schema %}
+  {
+    "name": "Footer",
+    "settings": [
+      {
+        "type": "link_list",
+        "id": "menu_linklist",
+        "label": "Menu",
+		    "default": "footer"
+      },
+	    {
+        "type": "checkbox",
+        "id": "show_social_icons",
+        "label": "Show social icons",
+		    "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "signup_show",
+        "label": "Show newsletter signup",
+		    "default": true
+      },
+      {
+        "type": "richtext",
+        "id": "lower_right",
+        "label": "Contact Text"
+      }
+    ]
+  }
+{% endschema %}

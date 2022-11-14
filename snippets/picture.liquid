@@ -1,0 +1,27 @@
+{%- unless lazyNeed -%}
+	{%- assign lazyNeed = false -%}
+{%- endunless -%}
+
+
+{% if lazyNeed %}
+<picture class="{{ picture_class }}">
+  <source media="(min-width: 1120px)" data-srcset="{{ img_lg }}">
+  <source media="(min-width: 900px)" data-srcset="{{ img_md }}">
+  <img 
+	class="{{ img_class }} lazyload"
+	data-nulls="{{ img_zoom }}"
+	
+	data-src="{{ img_sm }}" 
+	alt="{{ img_title }}">
+</picture>
+{% else %}
+<picture class="{{ picture_class }}">
+  <source media="(min-width: 1120px)" srcset="{{ img_lg }}">
+  <source media="(min-width: 900px)" srcset="{{ img_md }}">
+  <img 
+	class="{{ img_class }}"
+	data-nulls="{{ img_zoom }}"
+	src="{{ img_sm }}" 
+	alt="{{ img_title }}">
+</picture>
+{% endif %}

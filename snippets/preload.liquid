@@ -1,0 +1,60 @@
+  <link rel="preconnect dns-prefetch" href="https://fonts.shopifycdn.com" />
+  <link rel="preconnect dns-prefetch" href="https://cdn.shopify.com" />
+  <link rel="preconnect dns-prefetch" href="https://v.shopify.com" />
+  <link rel="preconnect dns-prefetch" href="https://cdn.shopifycloud.com" />
+
+  {% if settings.enable_shopify_review_comments %}
+  <link rel="preconnect dns-prefetch" href="https://productreviews.shopifycdn.com" />
+  {% endif %}
+
+  <!-- CSS
+  ================================================== -->
+  <link rel="preload" href="{{ 'styles.scss.css' | asset_url  }}" as="style">
+  <link rel="preload" href="{{ 'custom.scss.css' | asset_url  }}" as="style">
+  <link rel="preload" href="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js" as="script">
+  <link rel="preload" href="https://use.typekit.net/paf5mdd.js" as="script">
+  
+
+  <script>
+
+
+    let array = [];
+    //if(screen.width > 787){
+    function first_parentNode_insertBefore(src){
+      if(!src.includes('freeshippingbar')){
+        array.push(src);
+        console.log(src);
+      }
+     
+    }
+    //}
+    function x_parentNode_insertBefore(src){
+
+     if(!src.includes('freeshippingbar')){
+        array.push(src);
+       console.log(src);
+      }
+
+    }
+
+  </script>
+<style>
+  .product-block{
+  	opacity: 1 !important;
+  }
+  iframe#preview-bar-iframe {
+    height: 60px;
+  }
+  @media(max-width: 767px)
+  {
+  
+    iframe#preview-bar-iframe {
+      height: 90px;
+    }
+    
+  }
+  div#rc_container{
+  	display: block !important;
+  }
+</style>
+

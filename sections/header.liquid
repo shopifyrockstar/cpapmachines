@@ -1,0 +1,347 @@
+{% if template == 'password' or template == 'gift_card' %}
+
+  {% comment %} Password/gift card template logo {% endcomment %}
+  {% if section.settings.logo != blank %}
+    <h1 class="logo">
+      {% capture img_size %}{{ section.settings.logo_img_width | times: 2 }}x{% endcapture %}
+      <img src="{{ section.settings.logo | img_url: img_size }}" alt="{{ settings.logo.alt | escape }}" />
+    </h1>
+  {% else %}
+    <h1>{{ shop.name }}</h1>
+  {% endif %}
+
+{% else %}
+
+<div data-section-type="header">
+  <div id="pageheader">
+
+    {% capture logo_html %}
+    <div class="logo">
+      <a href="/" title="{{ shop.name }}">
+        {% if section.settings.logo != blank %}
+        {% capture img_size %}{{ section.settings.logo_img_width | times: 2 }}x{% endcapture %}
+        <img src="{{ section.settings.logo | img_url: img_size }}" alt="{{ settings.logo.alt | escape }}" />
+        {% else %}
+        <span class="logotext">{{ shop.name }}</span>
+        {% endif %}
+      </a>
+    </div><!-- /#logo -->
+    {% endcapture %} 
+     
+     <form id="search-form" name="search" action="/pages/search-results" class="hdr-search-rht">
+              
+              <input type="text" id="q" placeholder="Search..." name="q" value="" />
+      
+       <input type="submit" class="compact" value="&rarr;" />
+              <input type="hidden" name="type" value="{{ settings.search_type }}" />
+            </form>
+    
+    
+    
+    <div id="mobile-header" class="cf">
+      <span class="mobile-flex">
+        <button class="notabutton mobile-nav-toggle"><span></span><span></span><span></span></button>
+        <span class="search-link"><a href="/search"><img src="{{ 'search.png' | asset_url }}" alt="Search"></a></span>
+        <span class="your-acct"><a href="/account"><img src="{{ 'account.png' | asset_url }}" alt="Your Account"></a></span>
+      </span>
+      <span class="mobile-flex">
+        {{ logo_html }}
+      </span>
+    
+      <span class="mobile-flex">
+        <a href="/{% if template != 'cart' %}cart{% else %}checkout{% endif %}" class="cart-count {% if section.settings.use_btn_style_cart_link %}button{% endif %}">
+          Cart (<span class="cart-item-count">{{ cart.item_count }}</span>)
+        </a>
+        
+      </span>
+    </div>
+
+    <div class="logo-area logo-pos-{{ section.settings.logo_pos }} cf">
+
+      {% unless section.settings.logo_pos == 'below' %}<div class="container">{{ logo_html }}</div>{% endunless %}
+
+      {% comment %}<div class="util-area">{% endcomment %}
+        {% comment %}<div class="search-box elegant-input">
+          {% if section.settings.header_signup_show %}
+          <div class="signup-reveal-area">
+            <a class="signup-reveal" href="#">{{ 'layout.header.signup' | t }}</a>
+            {% if section.settings.header_signup_show %}{% include 'signup-form' %}{% endif %}
+          </div>
+          {% endif %}
+
+          <form class="search-form" action="/search" method="get">
+            <img src="{{ 'search.png' | asset_url }}" alt="Search Icon">
+            <input type="text" name="q" placeholder="{{ 'layout.header.search' | t }}" autocomplete="off"/>
+            <input type="submit" value="&rarr;" />
+            <input type="hidden" name="type" value="{{ settings.search_type }}" />
+          </form>
+        </div>{% endcomment %}
+
+
+        <div class="utils">
+          {% if section.settings.show_social_icons %}
+          {% include 'social-icons' %}
+          {% endif %}
+
+          {% if shop.customer_accounts_enabled %}
+            <ul class="account">
+              <li class="cart-icon">
+
+    <style>
+
+            @keyframes pulse {
+
+            50% {
+
+                transform: scale(1.5);
+
+            }
+
+    </style>
+
+    <a href="/cart">
+
+        <p id="minicart">{% if cart.item_count > 0 %}<img src="{{ "cart-icon-wh.svg" | asset_url }}">{% else %}<img src="{{ "cart-icon.svg" | asset_url }}">{%endif%}
+
+            <span {% if cart.item_count> 0 %}style="color: white;font-weight: bold !important;background: orange;border-radius: 50%;padding: 2px; width: 20px; height: 20px; display:inline-block; text-align: center; vertical-align: middle; animation: pulse 1s 2;
+
+"{% endif %}>
+
+                <span style="position: relative; top: -10px" class="cart-item-count">{{ cart.item_count }}</span>
+
+            </span>
+
+        </p>
+
+    </a>
+
+    <div class="mini-cart-items">
+
+    </div>
+
+</li>
+<!--               <li class="search-links">
+                <span><a href="/search">Search</a></span>
+              </li> -->
+              <li class="account-links">
+                {% if customer %}
+                <img src="{{ 'account.png' | asset_url }}" alt="Account Icon">
+                <span class="your-acct"><a href="/account">{{ 'layout.customer.account' | t }}</a></span>
+                <span class="slash">&nbsp;/&nbsp;</span>
+                <span class="logout">{{ 'layout.customer.log_out' | t | customer_logout_link }}</span>
+                {% else %}
+                {% if section.settings.nav_show_reg %}
+                <span class="register">{{ 'layout.customer.register' | t | customer_register_link }}</span> <span class="slash">/</span>
+                {% endif %}
+                <span class="login">{{ 'layout.customer.log_in' | t | customer_login_link }}</span>
+                {% endif %}
+              </li>
+            </ul>
+          {% endif %}
+
+<!--           <div class="cart-summary">
+            <a href="/{% if template != 'cart' %}cart{% else %}checkout{% endif %}" class="cart-count {% if section.settings.use_btn_style_cart_link %}button{% endif %}">
+              {{ 'layout.header.cart' | t }} ({{ cart.item_count }})
+            </a>
+
+            {% include 'currencies-switcher' %}
+          </div> -->
+          
+          
+        </div><!-- /.utils -->
+      {% comment %}</div><!-- /.util-area -->{% endcomment %}
+
+      {% if section.settings.logo_pos == 'below' %}<div class="container">{{ logo_html }}</div>{% endif %}
+
+    </div><!-- /.logo-area -->
+  </div><!-- /#pageheader -->
+
+  {% capture social_icons_html %}{% include 'social-icons' %}{% endcapture %}
+  {% capture extra_navigation_items %}
+    {% if social_icons_html contains '<li>' %}<div class="mobile-social">{{ social_icons_html }}</div>{% endif %}
+  {% endcapture %}
+
+  <div id="main-nav" class="nav-row {% if section.settings.nav_autoexpand %}autoexpand{% endif %}">
+    {% comment %}<div class="mobile-features">
+      <form class="mobile-search" action="/search" method="get">
+        <i></i>
+        <input type="text" name="q" placeholder="{{ 'layout.header.search' | t }}"/>
+        <button type="submit" class="notabutton">{% include 'svg-search' %}</button>
+      </form>
+    </div>{% endcomment %}
+    {% include 'main-navigation' with section.settings.menu_linklist %}
+    <div class="mobile-currency-switcher">{% include 'currencies-switcher' %}</div>
+  </div><!-- /#main-nav -->
+
+
+  {% if section.settings.head_not_home_only == false or template == 'index' %}
+
+  <div id="store-messages" class="messages-{{ section.blocks.size }}">
+    <div class="container cf">
+      {% for block in section.blocks %}
+
+      <div class="message message-{{ forloop.index }}">
+        {% if block.settings.link_url != empty %}
+        <a href="{{ block.settings.link_url }}">
+          {% endif %}
+
+          <h6 class="title">{{ block.settings.heading }}</h6>
+          <span class="tagline">{{ block.settings.subheading }}</span>
+
+          {% if block.settings.link_url != empty %}
+        </a>
+        {% endif %}
+
+        {% unless forloop.first %}<div class="fluff"></div>{% endunless %}
+      </div>
+
+      {% endfor %}
+    </div>
+  </div><!-- /#store-messages -->
+
+  {% if section.settings.head_not_mob_show %}
+  <div id="store-messages-mobile">
+    <div class="container">{{ section.settings.head_not_mob_text }}</div>
+  </div>
+  {% endif %}
+
+  {% endif %}
+</div>
+
+{% endif %}
+
+<style type="text/css">
+  .logo img {
+    width: {{ section.settings.logo_img_width }}px;
+  }
+</style>
+
+{% schema %}
+  {
+    "name": "Header",
+	"max_blocks": 3,
+    "settings": [
+      {
+        "type": "link_list",
+        "id": "menu_linklist",
+        "label": "Menu",
+		"default": "main-menu"
+      },
+      {
+        "type": "checkbox",
+        "id": "use_btn_style_cart_link",
+        "label": "Show cart link as button"
+      },
+      {
+        "type": "checkbox",
+        "id": "nav_show_reg",
+        "label": "Show 'Register' link in main menu",
+		"info": "Requires customer accounts to be enabled in Settings > Checkout"
+      },
+	  {
+        "type": "checkbox",
+        "id": "show_social_icons",
+        "label": "Show social icons",
+		"default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "nav_autoexpand",
+        "label": "Automatically expand navigation to current page"
+      },
+      {
+        "type": "checkbox",
+        "id": "header_signup_show",
+        "label": "Show newsletter signup in header",
+		"default": true
+      },
+      {
+        "type": "header",
+        "content": "Logo"
+      },
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Custom logo image",
+        "info": "260 x 100px (recommended)"
+      },
+      {
+        "type": "text",
+        "id": "logo_img_width",
+        "label": "Logo width",
+        "info": "Defined in pixels. Do not add the 'px' unit.",
+        "default": "300"
+      },
+      {
+        "type": "select",
+        "id": "logo_pos",
+        "label": "Logo position",
+        "options": [
+          {
+            "value": "",
+            "label": "Same row as search\/cart"
+          },
+          {
+            "value": "above",
+            "label": "Above search\/cart"
+          },
+          {
+            "value": "below",
+            "label": "Below search\/cart"
+          }
+        ]
+      },
+      {
+        "type": "header",
+        "content": "Store messages"
+      },
+      {
+        "type": "paragraph",
+        "content": "These are displayed under the main menu - great for promotions and notices"
+      },
+      {
+        "type": "checkbox",
+        "id": "head_not_home_only",
+        "label": "Show only on home page"
+      },
+      {
+        "type": "header",
+        "content": "Mobile store message"
+      },
+      {
+        "type": "checkbox",
+        "id": "head_not_mob_show",
+        "label": "Enable",
+        "default": false
+      },
+      {
+        "type": "text",
+        "id": "head_not_mob_text",
+        "label": "Text"
+      }
+    ],
+	"blocks": [
+	  {
+		"type": "message",
+		"name": "Store message",
+		"settings": [
+          {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading"
+          },
+          {
+            "type": "text",
+            "id": "subheading",
+            "label": "Subheading"
+          },
+          {
+            "type": "url",
+            "id": "link_url",
+            "label": "Link URL"
+          }
+		]
+	  }
+	]
+  }
+{% endschema %}

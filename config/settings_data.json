@@ -1,0 +1,1102 @@
+{
+  "presets": {
+    "Salt Yard": {
+      "lightbox_imgs": true,
+      "use_fullwidth_layout": true,
+      "use_logo_img": false,
+      "logo": "",
+      "logo_img_width": "300",
+      "bg_col": "#ffffff",
+      "bg_image": "",
+      "bg_method": "repeatxy",
+      "font_col_base": "#8a8f93",
+      "font_col_link": "#3d4c4f",
+      "font_col_link_hover": "#8a8f93",
+      "font_col_heads": "#232323",
+      "font_col_shoptitle": "#232323",
+      "btn_col": "#232323",
+      "btn_col_alt": "#000000",
+      "btn_col_txt": "#ffffff",
+      "head_bg_col": "#ffffff",
+      "head_txt_col": "#232323",
+      "head_nav_div_col": "#e2e2e2",
+      "font_col_nav": "#8a8f93",
+      "font_col_nav_hov": "#000000",
+      "font_col_nav_acct": "#8a8f93",
+      "panel_nav_bg": "#ffffff",
+      "panel_nav_bg_gradation": "darken",
+      "not_shade_bg": "#fafafa",
+      "head_not_col_bg": "#ffffff",
+      "head_not_col_txt1": "#232323",
+      "head_not_col_txt2": "#8a8f93",
+      "slide_bg_col": "rgba(0,0,0,0)",
+      "slide_txt_col": "#ffffff",
+      "slide_txt_bg_col": "rgba(0,0,0,0)",
+      "home_sec_signup_bg": "#fafafa",
+      "home_overlay_txt_col": "#ffffff",
+      "home_sec_collection_bg": "#fafafa",
+      "prod_hov_bg": "#ffffff",
+      "prod_thumb_detail_bg": "#ffffff",
+      "prod_thumb_detail_col": "#232323",
+      "prod_thumb_detail_col_a": "#e95144",
+      "prod_thumb_detail_close_img": "dark",
+      "coll_col_st_txt": "#ffffff",
+      "coll_col_sale": "#ebc2c1",
+      "coll_col_sold": "#232323",
+      "coll_col_gen": "#8da5d0",
+      "cross_page_promo_bg": "#f5f5f5",
+      "cross_page_promo_color": "#232323",
+      "foot_bg_col": "#fafafa",
+      "foot_text_col": "#232323",
+      "foot_divider_col": "#e2e2e2",
+      "font_fam_base": "GWF|Lato:400,700",
+      "font_fam_headings": "GWF|Cardo:400,400italic,700",
+      "font_fam_shoptitle": "GWF|Cardo:400,400italic,700",
+      "font_fam_nav": "GWF|Lato:400,700",
+      "font_fam_special": "GWF|Lato:400,700",
+      "font_size_base": "15",
+      "font_size_slideshow": "1.4",
+      "prod_thumb_detail_show": true,
+      "prod_thumb_height": "347",
+      "prod_thumb_variable_width": true,
+      "prod_hov_type": "permanent",
+      "prod_block_label_loc": "c",
+      "prod_stock_warn_show": true,
+      "prod_stock_warn_limit": "5",
+      "prod_show_vendor": true,
+      "prod_show_sku": false,
+      "soc_icons_double": false,
+      "cart_type": "page",
+      "show_multiple_currencies": false,
+      "currency_format": "money_format",
+      "supported_currencies": "CAD USD GBP",
+      "default_currency": "USD",
+      "checkout_use_header_image": true,
+      "checkout_header_image": "",
+      "checkout_logo": "",
+      "checkout_logo_image": "",
+      "checkout_logo_position": "left",
+      "checkout_logo_size": "medium",
+      "checkout_use_body_background_image": false,
+      "checkout_body_background_image": "",
+      "checkout_body_background_color": "#ffffff",
+      "checkout_input_background_color_mode": "white",
+      "checkout_use_sidebar_background_image": false,
+      "checkout_sidebar_background_image": "",
+      "checkout_sidebar_background_color": "#fafafa",
+      "checkout_heading_font": "Helvetica Neue",
+      "checkout_body_font": "Helvetica Neue",
+      "checkout_accent_color": "#2a9dcc",
+      "checkout_button_color": "#2a9dcc",
+      "checkout_error_color": "#ff6d6d"
+    },
+    "Chantilly": {
+      "lightbox_imgs": true,
+      "use_fullwidth_layout": false,
+      "use_logo_img": false,
+      "logo": "",
+      "logo_img_width": "350",
+      "bg_col": "#ffffff",
+      "bg_image": "",
+      "bg_method": "repeatxy",
+      "font_col_base": "#8a8f93",
+      "font_col_link": "#3d4c4f",
+      "font_col_link_hover": "#ec008c",
+      "font_col_heads": "#464e54",
+      "font_col_shoptitle": "#464e54",
+      "btn_col": "#464e54",
+      "btn_col_alt": "#ec008c",
+      "btn_col_txt": "#ffffff",
+      "head_bg_col": "#ffffff",
+      "head_txt_col": "#3d4c4f",
+      "head_nav_div_col": "#e2e2e2",
+      "font_col_nav": "#6a6a6a",
+      "font_col_nav_hov": "#ec008c",
+      "font_col_nav_acct": "#000000",
+      "panel_nav_bg": "#ffffff",
+      "panel_nav_bg_gradation": "same",
+      "not_shade_bg": "#fafafa",
+      "head_not_col_bg": "rgba(0,0,0,0)",
+      "head_not_col_txt1": "#3d4c4f",
+      "head_not_col_txt2": "#8a8f93",
+      "slide_bg_col": "rgba(0,0,0,0)",
+      "slide_txt_col": "#ffffff",
+      "slide_txt_bg_col": "rgba(0,0,0,0)",
+      "home_sec_signup_bg": "#fafafa",
+      "home_overlay_txt_col": "#ffffff",
+      "home_sec_collection_bg": "rgba(0,0,0,0)",
+      "prod_hov_bg": "#ffffff",
+      "prod_thumb_detail_bg": "#e2e2de",
+      "prod_thumb_detail_col": "#3d4c4f",
+      "prod_thumb_detail_col_a": "#ec008c",
+      "prod_thumb_detail_close_img": "dark",
+      "coll_col_st_txt": "#ffffff",
+      "coll_col_sale": "#ec008c",
+      "coll_col_sold": "#464e54",
+      "coll_col_gen": "#1bba8c",
+      "cross_page_promo_bg": "#e2e2de",
+      "cross_page_promo_color": "#0a1634",
+      "foot_bg_col": "#ffffff",
+      "foot_text_col": "#0a1634",
+      "foot_divider_col": "#e2e2e2",
+      "font_fam_base": "GWF|Lato:400,700",
+      "font_fam_headings": "GWF|Shadows+Into+Light",
+      "font_fam_shoptitle": "GWF|Shadows+Into+Light",
+      "font_fam_nav": "GWF|Lato:400,700",
+      "font_fam_special": "GWF|Lato:400,700",
+      "font_size_base": "15",
+      "font_size_slideshow": "1.8",
+      "prod_thumb_detail_show": true,
+      "prod_thumb_height": "255",
+      "prod_thumb_variable_width": true,
+      "prod_hov_type": "permanent",
+      "prod_block_label_loc": "c",
+      "prod_stock_warn_show": true,
+      "prod_stock_warn_limit": "5",
+      "prod_show_vendor": true,
+      "prod_show_sku": false,
+      "soc_icons_double": false,
+      "cart_type": "page",
+      "show_multiple_currencies": false,
+      "currency_format": "money_format",
+      "supported_currencies": "CAD USD GBP",
+      "default_currency": "USD",
+      "checkout_use_header_image": true,
+      "checkout_header_image": "",
+      "checkout_logo": "",
+      "checkout_logo_image": "",
+      "checkout_logo_position": "left",
+      "checkout_logo_size": "medium",
+      "checkout_use_body_background_image": false,
+      "checkout_body_background_image": "",
+      "checkout_body_background_color": "#ffffff",
+      "checkout_input_background_color_mode": "white",
+      "checkout_use_sidebar_background_image": false,
+      "checkout_sidebar_background_image": "",
+      "checkout_sidebar_background_color": "#fafafa",
+      "checkout_heading_font": "Helvetica Neue",
+      "checkout_body_font": "Helvetica Neue",
+      "checkout_accent_color": "#2a9dcc",
+      "checkout_button_color": "#2a9dcc",
+      "checkout_error_color": "#ff6d6d"
+    },
+    "Beatnik": {
+      "lightbox_imgs": true,
+      "use_fullwidth_layout": true,
+      "use_logo_img": true,
+      "logo": "shopify:\/\/shop_images\/logo-1.png",
+      "logo_img_width": "129",
+      "bg_col": "#f2f2f2",
+      "bg_image": "",
+      "bg_method": "repeatxy",
+      "font_col_base": "#8a8f93",
+      "font_col_link": "#3d4c4f",
+      "font_col_link_hover": "#00a2e1",
+      "font_col_heads": "#3f4b57",
+      "font_col_shoptitle": "#3f4b57",
+      "btn_col": "#00a2e1",
+      "btn_col_alt": "#00b0f3",
+      "btn_col_txt": "#ffffff",
+      "head_bg_col": "#f2f2f2",
+      "head_txt_col": "#3f4b57",
+      "head_nav_div_col": "#d1d6d9",
+      "font_col_nav": "#3f4b57",
+      "font_col_nav_hov": "#00a2e1",
+      "font_col_nav_acct": "#999999",
+      "panel_nav_bg": "#f2f2f2",
+      "panel_nav_bg_gradation": "same",
+      "not_shade_bg": "#fafafa",
+      "head_not_col_bg": "#f2f2f2",
+      "head_not_col_txt1": "#3f4b57",
+      "head_not_col_txt2": "#8a8f93",
+      "slide_bg_col": "rgba(0,0,0,0)",
+      "slide_txt_col": "#ffffff",
+      "slide_txt_bg_col": "rgba(0,0,0,0)",
+      "home_sec_signup_bg": "#fafafa",
+      "home_overlay_txt_col": "#3f4b57",
+      "home_sec_collection_bg": "#f2f2f2",
+      "prod_hov_bg": "#ffffff",
+      "prod_thumb_detail_bg": "#f2f2f2",
+      "prod_thumb_detail_col": "#3f4b57",
+      "prod_thumb_detail_col_a": "#00a2e1",
+      "prod_thumb_detail_close_img": "dark",
+      "coll_col_st_txt": "#ffffff",
+      "coll_col_sale": "#1c223f",
+      "coll_col_sold": "#3f4b57",
+      "coll_col_gen": "#3f51b5",
+      "cross_page_promo_bg": "#1c223f",
+      "cross_page_promo_color": "#ffffff",
+      "foot_bg_col": "#fafafa",
+      "foot_text_col": "#3f4b57",
+      "foot_divider_col": "#d1d6d9",
+      "font_fam_base": "GWF|Cardo:400,400italic,700",
+      "font_fam_headings": "GWF|Karla:400,700",
+      "font_fam_shoptitle": "GWF|Karla:400,700",
+      "font_fam_nav": "GWF|Karla:400,700",
+      "font_fam_special": "GWF|Karla:400,700",
+      "font_size_base": "15",
+      "font_size_slideshow": "1",
+      "prod_thumb_detail_show": true,
+      "prod_thumb_height": "255",
+      "prod_thumb_variable_width": true,
+      "prod_hov_type": "permanent",
+      "prod_block_label_loc": "c",
+      "prod_stock_warn_show": true,
+      "prod_stock_warn_limit": "5",
+      "prod_show_vendor": true,
+      "prod_show_sku": false,
+      "soc_icons_double": false,
+      "cart_type": "page",
+      "show_multiple_currencies": false,
+      "currency_format": "money_format",
+      "supported_currencies": "CAD USD GBP",
+      "default_currency": "USD",
+      "checkout_use_header_image": true,
+      "checkout_header_image": "",
+      "checkout_logo": "",
+      "checkout_logo_image": "",
+      "checkout_logo_position": "left",
+      "checkout_logo_size": "medium",
+      "checkout_use_body_background_image": false,
+      "checkout_body_background_image": "",
+      "checkout_body_background_color": "#ffffff",
+      "checkout_input_background_color_mode": "white",
+      "checkout_use_sidebar_background_image": false,
+      "checkout_sidebar_background_image": "",
+      "checkout_sidebar_background_color": "#fafafa",
+      "checkout_heading_font": "Helvetica Neue",
+      "checkout_body_font": "Helvetica Neue",
+      "checkout_accent_color": "#2a9dcc",
+      "checkout_button_color": "#2a9dcc",
+      "checkout_error_color": "#ff6d6d"
+    },
+    "Duke": {
+      "lightbox_imgs": true,
+      "use_fullwidth_layout": true,
+      "use_logo_img": false,
+      "logo": "",
+      "logo_img_width": "350",
+      "bg_col": "#ffffff",
+      "bg_image": "",
+      "bg_method": "repeatxy",
+      "font_col_base": "#8a8f93",
+      "font_col_link": "#3d4c4f",
+      "font_col_link_hover": "#e94b3f",
+      "font_col_heads": "#464e54",
+      "font_col_shoptitle": "#464e54",
+      "btn_col": "#eb2626",
+      "btn_col_alt": "#464e54",
+      "btn_col_txt": "#ffffff",
+      "head_bg_col": "#ffffff",
+      "head_txt_col": "#464e54",
+      "head_nav_div_col": "#d9d9d4",
+      "font_col_nav": "#464e54",
+      "font_col_nav_hov": "#eb2626",
+      "font_col_nav_acct": "#999999",
+      "panel_nav_bg": "#ffffff",
+      "panel_nav_bg_gradation": "darken",
+      "not_shade_bg": "#fafafa",
+      "head_not_col_bg": "#ffffff",
+      "head_not_col_txt1": "#464e54",
+      "head_not_col_txt2": "#8a8f93",
+      "slide_bg_col": "rgba(0,0,0,0)",
+      "slide_txt_col": "#ffffff",
+      "slide_txt_bg_col": "rgba(0,0,0,0)",
+      "home_sec_signup_bg": "#ffffff",
+      "home_overlay_txt_col": "#ffffff",
+      "home_sec_collection_bg": "#ffffff",
+      "prod_hov_bg": "#ffffff",
+      "prod_thumb_detail_bg": "#eaeaea",
+      "prod_thumb_detail_col": "#464e54",
+      "prod_thumb_detail_col_a": "#eb2626",
+      "prod_thumb_detail_close_img": "dark",
+      "coll_col_st_txt": "#ffffff",
+      "coll_col_sale": "#e94b3f",
+      "coll_col_sold": "#464e54",
+      "coll_col_gen": "#bacee3",
+      "cross_page_promo_bg": "#f5f5f5",
+      "cross_page_promo_color": "#0a1634",
+      "foot_bg_col": "#ffffff",
+      "foot_text_col": "#464e54",
+      "foot_divider_col": "#e2e2e2",
+      "font_fam_base": "GWF|Open+Sans:400,700",
+      "font_fam_headings": "GWF|Quantico:400,700",
+      "font_fam_shoptitle": "GWF|Quantico:400,700",
+      "font_fam_nav": "GWF|Quantico:400,700",
+      "font_fam_special": "GWF|Lato:400,700",
+      "font_size_base": "15",
+      "font_size_slideshow": "1.4",
+      "prod_thumb_detail_show": true,
+      "prod_thumb_height": "347",
+      "prod_thumb_variable_width": true,
+      "prod_hov_type": "permanent",
+      "prod_block_label_loc": "c",
+      "prod_stock_warn_show": true,
+      "prod_stock_warn_limit": "5",
+      "prod_show_vendor": true,
+      "prod_show_sku": false,
+      "soc_icons_double": false,
+      "cart_type": "page",
+      "show_multiple_currencies": false,
+      "currency_format": "money_format",
+      "supported_currencies": "CAD USD GBP",
+      "default_currency": "USD",
+      "checkout_use_header_image": true,
+      "checkout_header_image": "",
+      "checkout_logo": "",
+      "checkout_logo_image": "",
+      "checkout_logo_position": "left",
+      "checkout_logo_size": "medium",
+      "checkout_use_body_background_image": false,
+      "checkout_body_background_image": "",
+      "checkout_body_background_color": "#ffffff",
+      "checkout_input_background_color_mode": "white",
+      "checkout_use_sidebar_background_image": false,
+      "checkout_sidebar_background_image": "",
+      "checkout_sidebar_background_color": "#fafafa",
+      "checkout_heading_font": "Helvetica Neue",
+      "checkout_body_font": "Helvetica Neue",
+      "checkout_accent_color": "#2a9dcc",
+      "checkout_button_color": "#2a9dcc",
+      "checkout_error_color": "#ff6d6d"
+    }
+  },
+  "current": {
+    "lightbox_imgs": true,
+    "use_fullwidth_layout": true,
+    "font_col_base": "#5a5a5a",
+    "font_col_link": "#759ca8",
+    "font_col_link_hover": "#9bd2e2",
+    "font_col_heads": "#3f4b57",
+    "font_col_shoptitle": "#3f4b57",
+    "btn_col": "#9bd2e2",
+    "btn_col_alt": "#759ca8",
+    "btn_col_txt": "#ffffff",
+    "bg_col": "#ffffff",
+    "bg_image": "",
+    "bg_method": "repeatxy",
+    "head_bg_col": "#9bd2e2",
+    "head_txt_col": "#515151",
+    "head_nav_div_col": "#d1d6d9",
+    "font_col_nav": "#515151",
+    "font_col_nav_hov": "#759ca8",
+    "font_col_nav_acct": "#759ca8",
+    "panel_nav_bg": "#ffffff",
+    "panel_nav_bg_gradation": "same",
+    "not_shade_bg": "#fafafa",
+    "head_not_col_bg": "#ffffff",
+    "head_not_col_txt1": "#759ca8",
+    "head_not_col_txt2": "#8a8f93",
+    "prod_hov_bg": "#ffffff",
+    "prod_thumb_detail_bg": "#f2f2f2",
+    "prod_thumb_detail_col": "#515151",
+    "prod_thumb_detail_col_a": "#9bd2e2",
+    "prod_thumb_detail_close_img": "dark",
+    "coll_col_st_txt": "#ffffff",
+    "coll_col_sale": "#e63927",
+    "coll_col_sold": "#515151",
+    "coll_col_gen": "#515151",
+    "cross_page_promo_bg": "#9bd2e2",
+    "cross_page_promo_color": "#ffffff",
+    "foot_bg_col": "#ffffff",
+    "foot_text_col": "#515151",
+    "foot_divider_col": "#d1d6d9",
+    "font_fam_base": "GWF|Open+Sans:400,700",
+    "font_fam_headings": "GWF|Open+Sans:400,700",
+    "font_fam_shoptitle": "GWF|Open+Sans:400,700",
+    "font_fam_nav": "GWF|Open+Sans:400,700",
+    "font_fam_special": "GWF|Open+Sans:400,700",
+    "font_size_base": "15",
+    "font_size_slideshow": "1",
+    "prod_show_vendor": true,
+    "prod_show_sku": true,
+    "prod_thumb_detail_show": true,
+    "prod_thumb_height": "255",
+    "prod_thumb_variable_width": true,
+    "prod_hov_type": "permanent",
+    "prod_block_label_loc": "c",
+    "prod_stock_warn_show": true,
+    "prod_stock_warn_limit": "5",
+    "social_twitter_url": "",
+    "social_facebook_url": "https:\/\/www.facebook.com\/CPAP-Machines-Canada-1628563817267170",
+    "social_pinterest_url": "",
+    "social_tumblr_url": "",
+    "social_vimeo_url": "",
+    "social_youtube_url": "",
+    "social_instagram_url": "",
+    "social_google_url": "",
+    "social_rss_url": "",
+    "soc_icons_double": false,
+    "search_type": "product,article,page",
+    "favicon": "shopify:\/\/shop_images\/LOGO_option_4.png",
+    "cart_type": "drawer",
+    "show_multiple_currencies": false,
+    "currency_format": "money_format",
+    "supported_currencies": "CAD USD GBP",
+    "default_currency": "CAD",
+    "checkout_header_image": "",
+    "checkout_logo_image": "shopify:\/\/shop_images\/logo2.png",
+    "checkout_logo_position": "left",
+    "checkout_logo_size": "large",
+    "checkout_body_background_image": "",
+    "checkout_body_background_color": "#ffffff",
+    "checkout_input_background_color_mode": "transparent",
+    "checkout_sidebar_background_image": "",
+    "checkout_sidebar_background_color": "#9bd2e2",
+    "checkout_heading_font": "Helvetica Neue",
+    "checkout_body_font": "Helvetica Neue",
+    "checkout_accent_color": "#759ca8",
+    "checkout_button_color": "#759ca8",
+    "checkout_error_color": "#ff6d6d",
+    "home_sec_signup_bg": "#fafafa",
+    "home_overlay_txt_col": "#3f4b57",
+    "home_sec_collection_bg": "#f2f2f2",
+    "slide_bg_col": "rgba(0,0,0,0)",
+    "slide_txt_col": "#ffffff",
+    "slide_txt_bg_col": "rgba(0,0,0,0)",
+    "use_logo_img": true,
+    "logo": "shopify:\/\/shop_images\/logo-1.png",
+    "logo_img_width": "129",
+    "checkout_use_header_image": true,
+    "checkout_logo": "",
+    "checkout_use_body_background_image": false,
+    "checkout_use_sidebar_background_image": false,
+    "sections": {
+      "header": {
+        "type": "header",
+        "blocks": {
+          "1480589060193": {
+            "type": "message",
+            "settings": {
+              "heading": "",
+              "subheading": "Free Canada-wide shipping on orders over $150",
+              "link_url": "shopify:\/\/pages\/terms-conditions"
+            }
+          },
+          "1480589069320": {
+            "type": "message",
+            "settings": {
+              "heading": "",
+              "subheading": "Clinical support 1-877-820-4878",
+              "link_url": "shopify:\/\/pages\/contact-us"
+            }
+          }
+        },
+        "block_order": [
+          "1480589060193",
+          "1480589069320"
+        ],
+        "settings": {
+          "menu_linklist": "main-menu",
+          "use_btn_style_cart_link": true,
+          "nav_show_reg": true,
+          "show_social_icons": false,
+          "nav_autoexpand": true,
+          "header_signup_show": false,
+          "logo": "shopify:\/\/shop_images\/170125-CPAP-Web-Selected.png",
+          "logo_img_width": "300",
+          "logo_pos": "",
+          "head_not_home_only": false,
+          "head_not_mob_show": true,
+          "head_not_mob_text": "call 1-877-820-4878 for support"
+        }
+      },
+      "article-template": {
+        "type": "article-template",
+        "settings": {
+          "show_featured_image": true,
+          "show_date": true,
+          "show_author": true,
+          "show_article_tags": true
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+          "menu_linklist": "footer",
+          "show_social_icons": false,
+          "signup_show": false,
+          "lower_right": "<p><strong>Toll Free <\/strong><a href=\"tel:+01-877-820-4878\">+1 (877) 820-4878<\/a><\/p><p><strong>Email orders@cpapmachinescanada.ca<\/strong><\/p><p><strong>Snail Mail <\/strong>305-190 Sherway Dr., Etobicoke ON, M9C 5N2<\/p>"
+        }
+      },
+      "product-template": {
+        "type": "product-template",
+        "settings": {
+          "prod_show_tags": false,
+          "prod_show_type": false,
+          "prod_gall_thumbs_under": "beside",
+          "prod_desc_pos": "below",
+          "show_related_products": true
+        }
+      },
+      "collection-template": {
+        "type": "collection-template",
+        "settings": {
+          "coll_desc_pos": "below",
+          "coll_show_sort": true,
+          "coll_show_feat": false,
+          "coll_show_tags": true,
+          "show_tagfilt_custom1": false,
+          "tagfilt_custom1_name": "",
+          "tagfilt_custom1_tags": "",
+          "show_tagfilt_custom2": false,
+          "tagfilt_custom2_name": "",
+          "tagfilt_custom2_tags": "",
+          "coll_num_per_page": "16",
+          "coll_gridstream_mode": "grid",
+          "coll_gridstream_toggle": true
+        }
+      },
+      "cross-page-promos": {
+        "type": "cross-page-promos",
+        "blocks": {
+          "1478526647261": {
+            "type": "icon",
+            "settings": {
+              "icon": "support",
+              "text": "Support",
+              "link_url": "shopify:\/\/pages\/contact-us"
+            }
+          },
+          "1486744246401": {
+            "type": "icon",
+            "settings": {
+              "icon": "learning",
+              "text": "Learning<br>Centre",
+              "link_url": "shopify:\/\/pages\/about-cpap-therapy"
+            }
+          },
+          "1486744248023": {
+            "type": "icon",
+            "settings": {
+              "icon": "prescription",
+              "text": "Submit<br>Prescription",
+              "link_url": "shopify:\/\/pages\/submit-your-prescription"
+            }
+          },
+          "1486744249734": {
+            "type": "icon",
+            "settings": {
+              "icon": "shipping",
+              "text": "Shipping<br>Details",
+              "link_url": "shopify:\/\/pages\/terms-conditions"
+            }
+          }
+        },
+        "block_order": [
+          "1478526647261",
+          "1486744246401",
+          "1486744248023",
+          "1486744249734"
+        ],
+        "settings": {
+          "visibility": "all"
+        }
+      },
+      "blog-template": {
+        "type": "blog-template",
+        "settings": {
+          "show_date": true,
+          "show_author": true,
+          "show_article_tags": true
+        }
+      },
+      "cart-template": {
+        "type": "cart-template",
+        "settings": {
+          "enable_cart_notes": true,
+          "cart_terms_page": "",
+          "show_shipping_calculator": true,
+          "shipping_calculator_default_country": "Canada"
+        }
+      },
+      "1478795901388": {
+        "type": "slideshow",
+        "blocks": {
+          "1487988123930": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/iStock-116376961_crop1.jpg",
+              "title": "Sleep Well. Breathe Well. Live Well. <br>Act today.",
+              "text": "<br>LIVE LIFE WELL RESTED",
+              "position": "left",
+              "overlay_color": "#ffffff",
+              "overlay_bg": "#9bd3e3",
+              "link_url": ""
+            }
+          },
+          "1487988007148": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/HHS_0715_DreamWearCoupleSleepSide6455_RGBLo_crop1.jpg",
+              "title": "1 in 4 Canadians suffer from Sleep Apnea. None of them need to.",
+              "text": "<br>LIVE LIFE WELL RESTED",
+              "position": "right",
+              "overlay_color": "#ffffff",
+              "overlay_bg": "#9bd3e3",
+              "link_url": ""
+            }
+          },
+          "1478795901388-0": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/iStock-519615224_crop2.jpg",
+              "title": "Don’t wait 30 years <br>for a good night’s sleep",
+              "text": "<br>LIVE LIFE WELL RESTED",
+              "position": "right",
+              "overlay_color": "#ffffff",
+              "overlay_bg": "#9bd3e3",
+              "link_url": ""
+            }
+          },
+          "1478795901388-1": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/iStock-501736661_crop3.jpg",
+              "title": "When was the last time you <br>woke up truly refreshed?",
+              "text": "<br>LIVE LIFE WELL RESTED",
+              "position": "right",
+              "overlay_color": "#ffffff",
+              "overlay_bg": "#9bd3e3",
+              "link_url": ""
+            }
+          }
+        },
+        "block_order": [
+          "1487988123930",
+          "1487988007148",
+          "1478795901388-0",
+          "1478795901388-1"
+        ],
+        "settings": {
+        }
+      },
+      "1480591889144": {
+        "type": "featured-collection",
+        "settings": {
+          "title": "Popular Products",
+          "collection": "frontpage",
+          "use_carousel": true,
+          "background_color": "#ffffff"
+        }
+      },
+      "1486048016618": {
+        "type": "testimonials",
+        "blocks": {
+          "1486048016618-0": {
+            "type": "image",
+            "settings": {
+              "testimonial": "<p>I cannot believe how much energy I have. <br\/>This machine has changed my life.<\/p><p><\/p>",
+              "attribution": "George, Toronto ON",
+              "text_color": "#ffffff",
+              "bg_color": "#9bd2e2"
+            }
+          },
+          "1486048016618-1": {
+            "type": "image",
+            "settings": {
+              "testimonial": "<p>I used to ALWAYS have a mid-afternoon nap. Now I sleep so well at night I no longer need it!<\/p><p><\/p>",
+              "attribution": "Richard, Mississauga ON",
+              "text_color": "#ffffff",
+              "bg_color": "#9bd2e2"
+            }
+          },
+          "1490459256388": {
+            "type": "image",
+            "settings": {
+              "testimonial": "<p>I really appreciate the excellent service that I have received from CPAP Machines Canada. Purchasing online for a senior that is not used to online shopping is a bit concerning but your service has reassured me that it was the right choice. Thank you!<\/p>",
+              "attribution": "Stan, Sherwood Park AB",
+              "text_color": "#ffffff",
+              "bg_color": "#9bd2e2"
+            }
+          },
+          "1490459404058": {
+            "type": "image",
+            "settings": {
+              "testimonial": "<p>I must say I was a bit hesitant to wear a mask at night. But Gabby at CPAP Machines Canada worked with me to find a comfortable mask that allows me to read before bed. I&#x27;ve never slept better! Thank you Gabby and CMC!<\/p><p><\/p>",
+              "attribution": "Francine, Halifax NS",
+              "text_color": "#ffffff",
+              "bg_color": "#9bd2e2"
+            }
+          },
+          "1490459535975": {
+            "type": "image",
+            "settings": {
+              "testimonial": "<p>I am SO excited about the results I am having with my CPAP Machine - Thank You!<\/p><p><\/p>",
+              "attribution": "Jeannette, Oromocto, NB",
+              "text_color": "#ffffff",
+              "bg_color": "#9bd2e2"
+            }
+          }
+        },
+        "block_order": [
+          "1486048016618-0",
+          "1486048016618-1",
+          "1490459256388",
+          "1490459404058",
+          "1490459535975"
+        ],
+        "settings": {
+        }
+      },
+      "1486746577402": {
+        "type": "text-beside-content",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/obstruction_14399c68-bb88-49a2-b7b0-7cadde615284.png",
+          "layout": "right",
+          "title": "Learn about Sleep Apnea and the many solutions.",
+          "text": "<p>Obstructive Sleep Apnea (OSA) is a serious sleep disorder that affects over 1 in 4 Canadian adults. If left untreated, OSA can cause daytime drowsiness, lead to weight gain, increase your risk of cardiovascular disease, and negatively impact your mental health and well-being. Fortunately, there are treatment options available that dramatically reduce or eliminate these negative outcomes. <\/p>",
+          "button_text": "Learn More",
+          "button_url": "shopify:\/\/pages\/about-sleep-apnea",
+          "alignment": "middle"
+        }
+      },
+      "index-page-template": {
+        "type": "index-page-template",
+        "blocks": {
+          "1486766433860": {
+            "type": "text",
+            "settings": {
+              "width": "half",
+              "title": "Lorem",
+              "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus gravida tortor ac mauris cursus, id mollis est fringilla. Aenean suscipit, ligula quis eleifend commodo, turpis lacus dignissim ipsum, sed facilisis turpis leo in nulla. Ut pretium justo at viverra maximus. Integer nec venenatis leo. Donec interdum quam vitae elit convallis mattis. Fusce sodales, dui eu pulvinar vulputate, ante libero sollicitudin urna, non efficitur ipsum ante id mauris. Sed eget arcu ullamcorper, volutpat sapien at, tempus risus. Proin lectus nunc, venenatis vel tristique ac, varius in felis. Phasellus posuere ligula sit amet magna mattis pulvinar. Praesent tempus metus eros, vel tincidunt ligula malesuada quis. Donec libero dui, faucibus nec arcu lacinia, maximus imperdiet nisi. Sed tempus feugiat turpis, nec faucibus dui efficitur non.<\/p>"
+            }
+          },
+          "1486766465799": {
+            "type": "image",
+            "settings": {
+              "width": "half",
+              "image": "",
+              "link_url": "",
+              "text": "",
+              "overlay_color": "#ffffff",
+              "overlay_bg": "rgba(0,0,0,0)"
+            }
+          },
+          "1486766483845": {
+            "type": "image",
+            "settings": {
+              "width": "half",
+              "image": "",
+              "link_url": "",
+              "text": "",
+              "overlay_color": "#ffffff",
+              "overlay_bg": "rgba(0,0,0,0)"
+            }
+          },
+          "1486766474236": {
+            "type": "text",
+            "settings": {
+              "width": "half",
+              "title": "Ipsum",
+              "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus gravida tortor ac mauris cursus, id mollis est fringilla. Aenean suscipit, ligula quis eleifend commodo, turpis lacus dignissim ipsum, sed facilisis turpis leo in nulla. Ut pretium justo at viverra maximus. Integer nec venenatis leo. Donec interdum quam vitae elit convallis mattis. Fusce sodales, dui eu pulvinar vulputate, ante libero sollicitudin urna, non efficitur ipsum ante id mauris. Sed eget arcu ullamcorper, volutpat sapien at, tempus risus. Proin lectus nunc, venenatis vel tristique ac, varius in felis. Phasellus posuere ligula sit amet magna mattis pulvinar. Praesent tempus metus eros, vel tincidunt ligula malesuada quis. Donec libero dui, faucibus nec arcu lacinia, maximus imperdiet nisi. Sed tempus feugiat turpis, nec faucibus dui efficitur non.<\/p>"
+            }
+          },
+          "1486766523930": {
+            "type": "video",
+            "settings": {
+              "width": "half",
+              "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc"
+            }
+          },
+          "1486766561269": {
+            "type": "html",
+            "settings": {
+              "width": "half",
+              "code": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus gravida tortor ac mauris cursus, id mollis est fringilla. Aenean suscipit, ligula quis eleifend commodo, turpis lacus dignissim ipsum, sed facilisis turpis leo in nulla. Ut pretium justo at viverra maximus. Integer nec venenatis leo. Donec interdum quam vitae elit convallis mattis. Fusce sodales, dui eu pulvinar vulputate, ante libero sollicitudin urna, non efficitur ipsum ante id mauris. Sed eget arcu ullamcorper, volutpat sapien at, tempus risus. Proin lectus nunc, venenatis vel tristique ac, varius in felis. Phasellus posuere ligula sit amet magna mattis pulvinar. Praesent tempus metus eros, vel tincidunt ligula malesuada quis. Donec libero dui, faucibus nec arcu lacinia, maximus imperdiet nisi. Sed tempus feugiat turpis, nec faucibus dui efficitur non."
+            }
+          },
+          "1486766571676": {
+            "type": "image",
+            "settings": {
+              "width": "half",
+              "image": "",
+              "link_url": "",
+              "text": "",
+              "overlay_color": "#ffffff",
+              "overlay_bg": "rgba(0,0,0,0)"
+            }
+          }
+        },
+        "block_order": [
+          "1486766433860",
+          "1486766465799",
+          "1486766483845",
+          "1486766474236",
+          "1486766523930",
+          "1486766561269",
+          "1486766571676"
+        ],
+        "settings": {
+          "alignment": "top"
+        }
+      },
+      "index-page-template-2": {
+        "type": "index-page-template-2",
+        "blocks": {
+          "1486771912348": {
+            "type": "image",
+            "settings": {
+              "width": "half",
+              "image": "",
+              "link_url": "",
+              "text": "",
+              "overlay_color": "#ffffff",
+              "overlay_bg": "rgba(0,0,0,0)"
+            }
+          },
+          "1486771917500": {
+            "type": "text",
+            "settings": {
+              "width": "half",
+              "title": "",
+              "text": "<p>lorem<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "1486771912348",
+          "1486771917500"
+        ],
+        "settings": {
+          "alignment": "top"
+        }
+      },
+      "1497548830890": {
+        "type": "newsletter",
+        "settings": {
+          "title": "Sign up for our Sleep Smart Club!",
+          "text": "<p>Receive sleep tips as well as special offers and discounts to your inbox. Unsubscribe at any time.<\/p>",
+          "background_color": "#ffffff"
+        }
+      },
+      "announcement-bar": {
+        "type": "announcement-bar",
+        "settings": {
+          "message": true,
+          "home_page_only": false,
+          "header_padding": 0,
+          "message_text": "FALL SALE!  Save on CPAP Machines, Masks and Accessories. Shop now and save!",
+          "free_shipping_countdown": false,
+          "free_shipping_threshold": 100,
+          "free_shipping_notqualified": "Add just [price] to your cart to receive free shipping!",
+          "free_shipping_qualified": "Your order qualifies for free shipping!",
+          "message_link": "shopify:\/\/collections\/specials",
+          "color_bg": "#ffffff",
+          "color_text": "#f4311a",
+          "color_text_hover": "#759ca8",
+          "font_size": 15
+        }
+      },
+      "1588606300643": {
+        "type": "custom-row",
+        "blocks": {
+          "1588606300643-0": {
+            "type": "image",
+            "settings": {
+              "width": "quarter",
+              "image": "shopify:\/\/shop_images\/E-commerce_awards2018-bw.jpg",
+              "link_url": "",
+              "text": "",
+              "overlay_color": "#ffffff",
+              "overlay_bg": "rgba(0,0,0,0)"
+            }
+          },
+          "1588606300643-1": {
+            "type": "image",
+            "settings": {
+              "width": "quarter",
+              "image": "shopify:\/\/shop_images\/cupe-nb-bw.jpg",
+              "link_url": "",
+              "text": "",
+              "overlay_color": "#ffffff",
+              "overlay_bg": "rgba(0,0,0,0)"
+            }
+          },
+          "1588606300643-2": {
+            "type": "image",
+            "settings": {
+              "width": "quarter",
+              "image": "shopify:\/\/shop_images\/arta-bw.jpg",
+              "link_url": "",
+              "text": "",
+              "overlay_color": "#ffffff",
+              "overlay_bg": "rgba(0,0,0,0)"
+            }
+          },
+          "1588606476799": {
+            "type": "image",
+            "settings": {
+              "width": "quarter",
+              "image": "shopify:\/\/shop_images\/union-savings-bw.jpg",
+              "link_url": "",
+              "text": "",
+              "overlay_color": "#ffffff",
+              "overlay_bg": "rgba(0,0,0,0)"
+            }
+          }
+        },
+        "block_order": [
+          "1588606300643-0",
+          "1588606300643-1",
+          "1588606300643-2",
+          "1588606476799"
+        ],
+        "settings": {
+          "alignment": "top"
+        }
+      },
+      "1588626253636": {
+        "type": "text-beside-content",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/danger-of-not-cleaning-cpap-1_resized_2.jpg",
+          "layout": "right",
+          "title": "CPAP Machine Cleaning",
+          "text": "<p>CPAP Machine and CPAP Mask cleaning is critical to healthy and effective CPAP therapy. You can use a specialized CPAP Machine cleaner or just soap and water - but consistency is key!<\/p>",
+          "button_text": "CPAP Cleaning tips",
+          "button_url": "shopify:\/\/pages\/cpap-maintenance-care",
+          "alignment": "middle"
+        }
+      },
+      "1588627107935": {
+        "type": "featured-collections",
+        "disabled": true,
+        "blocks": {
+          "1588627154267": {
+            "type": "collection",
+            "settings": {
+              "collection": "auto-cpap-machines"
+            }
+          },
+          "1588627196584": {
+            "type": "collection",
+            "settings": {
+              "collection": "cpap-cleaning"
+            }
+          },
+          "1588627320714": {
+            "type": "collection",
+            "settings": {
+              "collection": "nasal-pillow-mask"
+            }
+          },
+          "1588627336343": {
+            "type": "collection",
+            "settings": {
+              "collection": "nasal-masks"
+            }
+          },
+          "1588627366159": {
+            "type": "collection",
+            "settings": {
+              "collection": "full-face-masks"
+            }
+          }
+        },
+        "block_order": [
+          "1588627154267",
+          "1588627196584",
+          "1588627320714",
+          "1588627336343",
+          "1588627366159"
+        ],
+        "settings": {
+          "title": "Popular Categories",
+          "use_carousel": false,
+          "background_color": "#f5f5f5",
+          "overlay_mode": "b"
+        }
+      },
+      "1588779882004": {
+        "type": "custom-row",
+        "blocks": {
+          "1588779882004-0": {
+            "type": "image",
+            "settings": {
+              "width": "quarter",
+              "image": "shopify:\/\/shop_images\/resmed-provider.jpg",
+              "link_url": "",
+              "text": "",
+              "overlay_color": "#ffffff",
+              "overlay_bg": "rgba(0,0,0,0)"
+            }
+          },
+          "1588779882004-1": {
+            "type": "image",
+            "settings": {
+              "width": "quarter",
+              "image": "shopify:\/\/shop_images\/pr-provider.jpg",
+              "link_url": "",
+              "text": "",
+              "overlay_color": "#ffffff",
+              "overlay_bg": "rgba(0,0,0,0)"
+            }
+          },
+          "1588779882004-2": {
+            "type": "image",
+            "settings": {
+              "width": "quarter",
+              "image": "shopify:\/\/shop_images\/rating.jpg",
+              "link_url": "",
+              "text": "",
+              "overlay_color": "#ffffff",
+              "overlay_bg": "rgba(0,0,0,0)"
+            }
+          },
+          "1588779986218": {
+            "type": "image",
+            "settings": {
+              "width": "quarter",
+              "image": "shopify:\/\/shop_images\/proudly-canadian2.jpg",
+              "link_url": "",
+              "text": "",
+              "overlay_color": "#ffffff",
+              "overlay_bg": "rgba(0,0,0,0)"
+            }
+          }
+        },
+        "block_order": [
+          "1588779882004-0",
+          "1588779882004-1",
+          "1588779882004-2",
+          "1588779986218"
+        ],
+        "settings": {
+          "alignment": "top"
+        }
+      },
+      "1588971645103": {
+        "type": "text-beside-content",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/CPAP-Logo-03.jpg",
+          "layout": "right",
+          "title": "Welcome to CPAP Machines Canada",
+          "text": "<p>Canada&#x27;s leading provider of CPAP Machines, CPAP Masks, CPAP Supplies, and Oxygen Therapy equipment. We carry the widest selection of CPAP equipment at affordable prices. Our mission: help Canadians sleep.<\/p>",
+          "button_text": "About Us",
+          "button_url": "shopify:\/\/pages\/about-us",
+          "alignment": "middle"
+        }
+      }
+    },
+    "content_for_index": [
+      "1478795901388",
+      "1480591889144",
+      "1588779882004",
+      "1588971645103",
+      "1486048016618",
+      "1588627107935",
+      "1486746577402",
+      "1588606300643",
+      "1588626253636",
+      "1497548830890"
+    ],
+    "blocks": {
+      "855628211100114053": {
+        "type": "shopify:\/\/apps\/klaviyo-email-marketing-sms\/blocks\/klaviyo-onsite-embed\/2632fe16-c075-4321-a88b-50b567f42507",
+        "disabled": false,
+        "settings": {
+        }
+      }
+    }
+  }
+}

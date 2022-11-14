@@ -1,0 +1,112 @@
+<div class="container strongly-padded-row layout-content-with-image-{{ section.settings.layout }} valign-{{ section.settings.alignment}} cf">
+  <div class="image-cont image-before">
+    {% if section.settings.image == blank %}
+    <div class="placeholder-image">{{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}</div>
+    {% else %}
+    <!--  Add src attribute to img tag starts here    -->
+    <img class="custom-img" src="{{ section.settings.image | img_url: '800x800' }}" data-src="{{ section.settings.image | img_url: '800x800' }}" alt="{{ section.settings.image.alt | escape }}" />
+    <!--  Add src attribute to img tag ends here    -->
+    {% endif %}
+  </div>
+  
+
+  <div class="content user-content">
+    {% if section.settings.title != blank %}
+    <h1 class="majortitle in-content">{{ section.settings.title }}</h1>
+    {% endif %}
+    
+    <div class="user-content">{{ section.settings.text }}</div>
+    <a href="{{ section.settings.button_url }}" class="button">{{ section.settings.button_text }}</a>
+  </div>
+
+  {% if section.settings.layout == 'right' %}
+  <div class="image-cont image-after">
+  {% if section.settings.image == blank %}
+    <div class="placeholder-image">{{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}</div>
+    {% else %}
+    <!--  Add src attribute to img tag starts here    -->
+    <img class="custom-img" src="{{ section.settings.image | img_url: '800x800' }}" data-src="{{ section.settings.image | img_url: '800x800' }}" alt="{{ section.settings.image.alt | escape }}" />
+    <!--  Add src attribute to img tag ends here    -->
+    {% endif %}
+  </div>
+  {% endif %}
+</div>
+
+
+{% schema %}
+  {
+    "name": "Image with text",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "select",
+        "id": "layout",
+        "label": "Layout",
+        "options": [
+          {
+            "value": "right",
+            "label": "Text on left"
+          },
+		      {
+            "value": "left",
+            "label": "Text on right"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+		    "default": "Image with text"
+      },
+	    {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text",
+		    "default": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>"
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button Text",
+        "default": "More Info"
+      },
+      {
+        "type": "url",
+        "id": "button_url",
+        "label": "Button URL"
+      },
+      {
+        "type": "select",
+        "id": "alignment",
+        "label": "Vertical alignment",
+        "default": "middle",
+        "options": [
+          {
+            "value": "top",
+            "label": "Top"
+          },
+          {
+            "value": "middle",
+            "label": "Middle"
+          },
+          {
+            "value": "bottom",
+            "label": "Bottom"
+          }
+        ]
+  	  }
+  	],
+  	"presets": [
+  	  {
+  	    "name": "Image with text",
+        "category": "Image",
+        "settings": {}
+  	  }
+  	]
+  }
+{% endschema %}

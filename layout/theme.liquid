@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+
+    {% comment %}
+    {% render 'preload' %}
+    {% endcomment %}
+
+    {% include 'judgeme_core' %}
+    <meta name="google-site-verification" content="1M6ii7gmArDhyge4rBcbrnqVEBnPZgTALeWN81TaB_8" />
+    <meta name="google-site-verification" content="CSP56HMtfzbADY2T5B6JmXrCm0XTXMR-E4r5kD8ZuDM" />
+    <meta name="facebook-domain-verification" content="tnbc20ykl7ocp3yr0ofgvgqbcfpw2n" />
+    <!-- Symmetry 3.0.6 -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta name="theme-color" content="{{ settings.btn_col }}">
+    <meta name="format-detection" content="telephone=no">
+
+    {% if settings.favicon != blank and settings.favicon contains '.png' %}
+    <link rel="shortcut icon" href="{{ settings.favicon | img_url: 'master' }}" type="image/png" />
+    {% elsif settings.favicon != blank and settings.favicon contains '.ico' %}
+    <link rel="shortcut icon" href="{{ settings.favicon | img_url: 'master' }}" type="image/x-icon" />
+    {% endif %}
+
+    <title>
+      {{ page_title }}{% if current_tags %}{% assign meta_tags = current_tags | join: ', ' %} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags }}{% endif %}{% if current_page != 1 %} &ndash; {{ 'general.meta.page' | t: page: current_page }}{% endif %}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}
+    </title>
+    {% if page_description %}
+    <meta name="description" content="{{ page_description | escape }}" />
+    {% endif %}
+    <link rel="canonical" href="{{ canonical_url }}" />
+
+    {% include 'opengraph-tags' %}
+    {% include 'twitter-card' %}
+
+    {% comment %}
+    <style>
+      {% render 'styles-css' %}
+      {% render 'custom-css' %}
+    </style>
+    {% endcomment %}
+    
+    {{ 'styles.scss.css' | asset_url | stylesheet_tag }}
+    {{ 'custom.scss.css' | asset_url | stylesheet_tag }}
+    
+    {{ '//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js' | script_tag }}
+  	{{ 'api.jquery.js' | shopify_asset_url | script_tag }}
+    
+    {% if template contains 'customer' %}
+      {{ "shopify_common.js" | shopify_asset_url | script_tag }}
+      {{ "customer_area.js" | shopify_asset_url | script_tag }}
+    {% endif %}
+    
+    <script>
+      Shopify.money_format = {{ shop.money_format | json }};
+      window.theme = window.theme || {};
+      theme.money_format = {{ shop.money_format | json }};
+      theme.productData = {};
+      document.documentElement.className = document.documentElement.className.replace('no-js', '');      
+    </script>
+    {% if template contains 'product' %}
+    	
+    <script src="https://appsolve.io/assets/js/bundle.js?v=1617283261&shop=cpapmachinescanada.myshopify.com" async></script>
+    {% endif %}
+
+    {{ content_for_header }} 
+
+    {% render 'vitals-loader' %}
+    {% render 'weglot_hreftags' %}
+    {% render 'weglot_switcher' %}
+    {% comment %}
+    {% render 'lazy-theme-scripts' %}
+    {% endcomment %}
+    
+    <script type="text/javascript" src="{{ 'vendor.js' | asset_url }}"></script>
+    <script type="text/javascript" src="{{ 'theme.js' | asset_url }}"></script>
+    
+    <script type="text/javascript" src="{{ 'custom.js' | asset_url }}"></script>
+    
+    <script type="text/javascript" src="https://cdn.weglot.com/weglot.min.js"></script>    
+    <script type="text/javascript" src="https://rechargeassets-bootstrapheroes-rechargeapps.netdna-ssl.com/static/js/rcWidget.js"></script>    
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VC9J01Z7N1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-VC9J01Z7N1');
+</script>
+    <meta name="facebook-domain-verification" content="tnbc20ykl7ocp3yr0ofgvgqbcfpw2n" />
+  </head>
+
+  <body class="template-{{ template | split: '.' | first }} {% if page.handle != null %}page-{{ page.handle }}{% endif %}">
+
+    {% section 'announcement-bar' %}
+    {% section 'header' %}
+
+    <div id="content">
+      <div class="container cf">
+
+        {{ content_for_layout }}
+
+      </div><!-- /.container -->
+    </div><!-- /#content -->
+
+    <div id="pagefooter">
+      {% section 'cross-page-promos' %}
+
+      {% section 'footer' %}
+    </div><!-- /#pagefooter -->
+
+    {% comment %}Screwy naming...{% endcomment %}
+
+    {% include 'currencies' %}
+
+
+    {% include 'subscription-theme-footer' %}
+
+    {% include 'klaviyo' %} 
+    {% include 'smile-initializer' %}
+
+
+    <!-- Global site tag (gtag.js) - Google Ads: 1034338415 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-1034338415"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-1034338415', {'allow_enhanced_conversions': true});
+</script>
+
+      jQuery('a[href="tel:18778204878"]').click(function(){
+        gtag('event', 'conversion', {'send_to': 'AW-1034338415/wTJuCMDgx3sQ74Cb7QM'});
+      });
+
+      try{Typekit.load({ async: true });}catch(e){}
+    </script>
+
+    <!-- BEGIN GCR Badge Code -->
+    <script data-src="https://apis.google.com/js/platform.js?onload=renderBadge"
+            async>
+    </script>
+    <!-- END GCR Badge Code -->
+
+
+    <script>
+
+      if(navigator.userAgent.indexOf("Firefox") != -1)
+      {
+
+        let images = $(".custom-slide,  .custom-img");
+
+        Array.from(images).forEach(
+          (img)=>{
+            let src = $(img).attr("data-src");
+
+            $(img).attr("src", src);
+          }
+        );
+
+      }
+
+
+
+    </script>
+
+    {% render 'footer-hash' %}
+    {% if product %}
+      <script type="text/javascript">
+var _learnq = _learnq || [];
+	document.getElementById("add-item-to-cart").addEventListener('click',function (){
+ 		_learnq.push(['track', 'Added to Cart', item]);
+	});</script>
+    {% endif %}
+    
+  </body>
+</html>

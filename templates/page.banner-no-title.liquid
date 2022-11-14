@@ -1,0 +1,16 @@
+{% capture myHandle %}{{ page.handle | handleize }}.jpg{% endcapture %}
+<style>
+  .page-header{
+    background: url({{ myHandle | file_url }}) #ccc no-repeat 50% 50% / cover; 
+    min-height: 400px; 
+  }
+  @media screen and (max-width:767px){ .page-header{ min-height: 200px; } }
+  @media screen and (max-width:500px){ .page-header{ min-height: 160px; } }
+</style>
+<div class="page-header no-title" style=""></div>
+<div class="container cf">
+  {% comment %}<div class="page-header cf"> </div>{% endcomment %}
+  <div class="user-content row-spacing {% if settings.lightbox_imgs %}lightboximages{% endif %}">
+    {{ page.content }}
+  </div>
+</div>

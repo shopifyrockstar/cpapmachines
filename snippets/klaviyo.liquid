@@ -1,0 +1,39 @@
+<script type="text/javascript">
+   window.addEventListener('allReady', function(){
+    $("input[name='contact[email]']").on('blur', function(e) {
+        e.preventDefault();
+        var email = $(this).val();
+        var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "https://manage.kmail-lists.com/subscriptions/external/subscribe",
+            "method": "POST",
+            "headers": {
+                "content-type": "application/x-www-form-urlencoded",
+                "cache-control": "no-cache"
+            },
+            "data": {
+                "g": "PNQxLZ",
+                "$fields": "$source",
+                "email": email,
+                "$source": "Shopify form"
+            }
+        };
+        $.ajax(settings).done(function (response) {
+            console.log(response);
+        });
+    });
+   });
+</script>
+
+<script type="text/javascript">
+  var _learnq = _learnq || [];
+
+  _learnq.push(['account', 'JpbT68']);
+
+  (function () {
+  var b = document.createElement('script'); b.type = 'text/javascript'; b.async = true;
+  b.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'static.klaviyo.com/onsite/js/klaviyo.js';
+  var a = document.getElementsByTagName('script')[0]; a.parentNode.insertBefore(b, a);
+  })();
+</script>

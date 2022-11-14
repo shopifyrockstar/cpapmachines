@@ -1,0 +1,14 @@
+{% for link in linklists['custom-pages'].links %}
+  {% case forloop.index %}
+    {% when 1 %}
+      {% if link.object.handle == page.handle %}
+        {% section 'index-page-template' %}
+      {% endif %}
+    {% when 2 %}
+      {% if link.object.handle == page.handle %}
+        {% section 'index-page-template-2' %}
+      {% endif %}
+  {% endcase %}
+{% endfor %}
+
+

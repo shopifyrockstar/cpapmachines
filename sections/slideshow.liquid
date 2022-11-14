@@ -1,0 +1,192 @@
+<div class="slideshow-row section-id-{{ section.id }} slideshow" data-section-type="slideshow">
+  {% unless settings.use_fullwidth_layout %}<div class="container uncontain-desktop-down">{% endunless %}
+  <div class="slideshow auto-play scaled-text-base">
+    {% for block in section.blocks %}
+      {% if block.type == "image" %}
+        {% comment %}<div class="slide slide-{{ forloop.index }}" {{ block.shopify_attributes }}>{% endcomment %}
+        <div class="slide slide-{{ forloop.index }}" >
+          {% if block.settings.link_url != blank %}<a href="{{ block.settings.link_url }}">{% endif %}
+          
+          {% if block.settings.image == blank %}
+          <div class="placeholder-image placeholder--banner {% if block.settings.title != blank or block.settings.text != blank %}dark{% endif %}">
+            {% capture current %}{% cycle 1, 2 %}{% endcapture %}
+            {{ 'lifestyle-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+          </div>
+          {% else %}
+          
+
+          {% assign current_img_sm = block.settings.image | img_url: '500x400' | prepend: 'https:' %}
+          {% assign current_img_md = block.settings.image | img_url: '960x600' | prepend: 'https:' %}
+          {% assign current_img_lg = block.settings.image | img_url: 'master' | prepend: 'https:' %}
+
+          <!-- {{ template.name }}_image_lcp [{{ current_img_sm }}] -->
+
+          {% if forloop.index0 == 0 %}
+
+                  
+          
+                   {% render 'picture',
+          img_sm: current_img_sm,
+          img_md: current_img_md,
+          img_lg: current_img_lg,
+          img_class: "picture__block",
+          lazyNeed : false
+          %}
+		  {% else %}
+
+                   {% render 'picture',
+          img_sm: current_img_sm,
+          img_md: current_img_md,
+          img_lg: current_img_lg,
+          img_class: "picture__block",
+          lazyNeed : false
+          %}
+
+          {% endif %}
+      
+<!--           <img class="custom-slide" src="{{block.settings.image | img_url: '850x' }}" data-src="{{ block.settings.image | img_url: '1800x' }}" alt="{{ block.settings.image.alt | escape }}" /> -->
+          {% endif %}
+          
+          {% if block.settings.title != blank or block.settings.text != blank %}
+          <div class="overlay-text overlay-{{ block.settings.position }}">
+            <div class="inner">
+              <div class="text">
+                <div class="scaled-text">
+                  <div>{{ block.settings.title }}</div>
+                  <div class="second-line">{{ block.settings.text }}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endif %}
+          {% if block.settings.link_url != blank %}</a>{% endif %}
+        </div>
+      {% elsif block.type == "video" %}
+        {% comment %}<div class="{% unless settings.use_fullwidth_layout %}container fully-spaced-row{% endunless %}" data-section-type="video">{% endcomment %}
+        <div class="slide slide-{{ forloop.index }}" data-section-type="video">
+          {% if block.settings.video_url != blank %}
+          <div class="video-container" data-video-id="{{ block.settings.video_url.id }}" data-video-type="{{ block.settings.video_url.type }}" data-video-autoplay="{{ block.settings.autoplay }}"></div>
+          {% endif %}
+        </div>
+        {% comment %}</div>{% endcomment %}
+      {% endif %}
+    {% endfor %}
+  </div>
+  {% unless settings.use_fullwidth_layout %}</div>{% endunless %}
+</div>
+
+<style type="text/css">
+  {% for block in section.blocks %}
+  .section-id-{{ section.id }} .slide-{{ forloop.index }} .overlay-text .text > div {
+    color: {{ block.settings.overlay_color }};
+    background: {{ block.settings.overlay_bg | hex_to_rgba: 0.5 }};
+  }
+  {% endfor %}
+</style>
+
+
+{% schema %}
+  {
+    "name": "Slideshow",
+    "max_blocks": 8,
+    "settings": [],
+	  "blocks": [
+	    {
+		    "type": "image",
+        "name": "Slide",
+        "settings": [
+  			  {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image",
+            "info": "1200px wide minimum"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Heading",
+    			  "default": "Slideshow"
+          },
+    			{
+            "type": "text",
+            "id": "text",
+            "label": "Subheading",
+    			  "default": "Tell your story with images"
+          },
+          {
+            "type": "select",
+            "id": "position",
+            "label": "Text alignment",
+            "options": [
+              {
+                "value": "left",
+                "label": "Left"
+              },
+              {
+                "value": "centre",
+                "label": "Center"
+              },
+              {
+                "value": "right",
+                "label": "Right"
+              }
+            ],
+    			  "default": "centre"
+          },
+          {
+            "type": "color",
+            "id": "overlay_color",
+            "label": "Text color",
+            "default": "#ffffff"
+          },
+          {
+            "type": "color",
+            "id": "overlay_bg",
+            "label": "Overlay background",
+            "default": "#464654"
+          },
+          {
+            "type": "url",
+            "id": "link_url",
+            "label": "Slide link"
+          }
+    		]
+	    },
+      {
+        "type": "video",
+        "name": "Video",
+        "settings": [
+          {
+            "id": "video_url",
+            "type": "video_url",
+            "label": "Video URL",
+            "accept": ["youtube", "vimeo"],
+            "info": "Supports Youtube and Vimeo",
+            "default": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc"
+          },
+          {
+            "id": "autoplay",
+            "type": "checkbox",
+            "label": "Autoplay",
+            "default": false
+          }
+        ]
+      }
+	  ],
+	  "presets": [
+      {
+    		"name": "Slideshow",
+        "category": "Image",
+        "settings": {},
+    		"blocks": [
+          {
+    			  "type": "image"
+    		  },
+    	 	  {
+    			  "type": "image"
+    		  }
+    		]
+      }
+	  ]
+  }
+{% endschema %}

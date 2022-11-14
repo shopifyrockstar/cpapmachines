@@ -1,0 +1,54 @@
+<div class="container cf">
+  <div class="page-header cf">
+    <h1 class="majortitle">{{ page.title }}</h1>
+  </div>
+  
+  <div class="row-spacing {% if settings.lightbox_imgs %}lightboximages{% endif %}">
+    <div id="template" class="layout-column-half-left righty-form">
+      <p>{{ 'contact.form.subtext' | t }}</p>
+      {% form 'contact' %}
+      {% if form.posted_successfully? %}
+      <p>{{ 'contact.form.post_success' | t }}</p>
+      {% endif %}
+      
+      {% if form.errors %}
+      <ul class="errors">
+        {% for field in form.errors %}
+        <li>{{ field | replace: 'body','Message' | capitalize }} - {{ form.errors.messages[field] }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+
+      <div class="large_form">
+        <label for="contact_name">{{ 'contact.form.name' | t }}*</label>
+        <input required type="text" class="required" id="contact_name" name="contact[name]" placeholder="Your Name" />
+      </div>
+      <div class="large_form">
+        <label for="contact_email">{{ 'contact.form.email' | t }}*</label>
+        <input required type="email" class="required" id="contact_email" class="email" name="contact[email]" placeholder="Your Email" />
+      </div>
+      <div class="large_form">
+        <label for="contact_phone">{{ 'contact.form.phone' | t }}*</label>
+        <input required type="phone" class="required" id="contact_phone" class="phone" name="contact[phone]" placeholder="Your Phone" />
+      </div>
+      <div class="large_form">
+        <label for="message">{{ 'contact.form.message' | t }}*</label>
+        <textarea required id="message" class="required" name="contact[body]" placeholder="Your Message" ></textarea>
+      </div>
+      <div class="action_bottom">
+        <input type="submit" value="{{ 'contact.form.send' | t }}" />
+      </div>
+      {% endform %}
+    </div>
+    <div class="layout-column-half-right user-content">
+      <p>For support call us at</p>
+      <div class="h2"><a href="tel:18778204878">1 877 820 4878</a></div>
+    </div>
+  </div>
+  <br style="clear:both">
+  <hr>
+  <div class="row-spacing {% if settings.lightbox_imgs %}lightboximages{% endif %}">
+    {{ page.content }}
+  </div>
+  <br>
+</div>

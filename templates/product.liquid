@@ -1,0 +1,15 @@
+{% comment %}
+  The contents of the product.liquid template can be found in /sections/product-template.liquid
+{% endcomment %}
+
+{% section 'product-template' %}
+{% include 'judgeme_widgets', widget_type: 'judgeme_review_widget', concierge_install: true %}
+
+  {% include 'related-products' %}
+
+<script>theme.productData[{{ product.id }}] = {{ product | json }};</script>
+
+{% include 'klaviyo1' %}
+<div data-rebuy-id="56179" data-rebuy-shopify-product-ids="{{ product.id }}"></div>
+<div data-rebuy-id="56186" data-rebuy-shopify-product-ids="{{ product.id }}"></div>
+<div data-rebuy-id="56190" data-rebuy-shopify-product-ids="{{ product.id }}"></div>

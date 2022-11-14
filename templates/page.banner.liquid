@@ -1,0 +1,21 @@
+{% capture myHandle %}{{ page.handle | handleize }}.jpg{% endcapture %}
+<div class="page-header scaled-text-base" style="background: url({{ myHandle | file_url }}) #ccc no-repeat 50% 50% / cover; min-height: 400px">
+    {% comment %}<h1 class="majortitle"> </h1>{% endcomment %}
+    <div class="overlay-text overlay-right">
+      <div class="inner">
+        <div class="text">
+          {% comment %}<div class="scaled-text" style="font-size: 114.63%;">{% endcomment %}
+          <div class="scaled-text">
+            {{ page.title }}
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+<div class="container cf">
+  <div class="page-header cf">
+  </div>
+  <div class="user-content row-spacing {% if settings.lightbox_imgs %}lightboximages{% endif %}">
+    {{ page.content }}
+  </div>
+</div>
