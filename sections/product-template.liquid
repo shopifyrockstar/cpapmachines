@@ -1,5 +1,6 @@
 {% assign preorder_product = false %}
 {% assign preorder2_product = false %}
+{% assign preorder3_product = false %}
 <div itemscope itemtype="http://schema.org/Product" data-section-type="product-template">
   <meta itemprop="name" content="{{ product.title }}" />
   <meta itemprop="url" content="{{ shop.url }}{{ product.url }}" />
@@ -231,6 +232,10 @@
             {% if tag == 'preorder2' %}
             	{% assign preorder2_product = true %}
             {% endif %}
+
+            {% if tag == 'preorder3' %}
+            	{% assign preorder3_product = true %}
+            {% endif %}
           
           {% endfor %}
           
@@ -246,6 +251,12 @@
             {% if preorder2_product == true %}
               <div class="preorder-wrapper">                
                 <p>Your product will be ordered and you will be placed onto our priority list with expected delivery in 6-10 weeks</p>
+              </div>            	
+            {% endif %}
+
+            {% if preorder3_product == true %}
+              <div class="preorder-wrapper">                
+                <p>Your product will be ordered and you will be placed onto our priority list with expected delivery in 2-4 weeks</p>
               </div>            	
             {% endif %}
             
